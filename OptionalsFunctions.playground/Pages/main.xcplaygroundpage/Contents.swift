@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+//string
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// optional, nil
 
 
 
@@ -39,7 +39,7 @@ var otherPetName: String?
 
 
 
-
+//nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//optional, nil
 
 
 
@@ -62,7 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "Dylan"
+//string, optional
 
 
 
@@ -76,7 +77,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,8 +89,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+if let thirdPetName = thirdPetName {
+    print (thirdPetName)
+}
 
 
 
@@ -99,8 +101,12 @@ var thirdPetName: String? = nil
  ### 8. Write a function called `printPetName` that takes a pet's name as a parameter. It should print the pet's name if the pet name exists, or "There is no pet name!" if the pet's name does not exist.
  */
 // write your code here
-
-
+func printPetName (petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else
+    {print ("There is no pet name!")}
+}
 
 
 
@@ -112,7 +118,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,8 +131,17 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+func minimum (integers: [Int]) -> Int {
+    var theMinimum = integers[0]
+    var others = integers.dropFirst()
+    for number in others {
+        if number < theMinimum {
+            theMinimum = number
+        }
+    }
+    
+    return theMinimum
+}
 
 
 
@@ -136,7 +152,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(integers: values1)
 
 
 
@@ -149,8 +165,8 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
  */
 let values2: [Int] = []
 // write your code here
-
-
+//minimum(integers: values2)
+//error
 
 
 
@@ -162,8 +178,23 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
+func maybeMinimum (integers: [Int]) -> Int? {
+    if integers.isEmpty {
+        return nil}
+    else{
+    var theMinimum = integers[0]
+    var others = integers.dropFirst()
+    if integers != nil {
+        for number in others {
+            if number < theMinimum {
+                theMinimum = number
+                    }
+        }
+            return theMinimum
+}
+return nil
+}
+}
 
 
 
@@ -175,7 +206,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(integers: values1)
 
 
 
@@ -189,7 +220,7 @@ let values2: [Int] = []
 
 
 
-
+maybeMinimum(integers: values2)
 
 
 
