@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// String
 
 
 
@@ -26,7 +26,7 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
+// String?
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+// String?
 
 
 
@@ -62,7 +62,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "thirdName"
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let name = thirdPetName {
+    print(name)
+}
 
 
 
@@ -100,7 +102,14 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName : String?) {
+    if let name = petName {
+        print(name)
+    }
+    else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +121,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +134,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(nums : [Int]) -> Int {
+    var ret : Int = Int.max;
+    for num in nums {
+        if (num < ret) {
+            ret = num;
+        }
+    }
+    
+    return ret;
+}
 
 
 
@@ -137,7 +156,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(nums: values1)
 
 
 
@@ -150,7 +169,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+minimum(nums: values2)
 
 
 
@@ -162,7 +181,21 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(nums : [Int]) -> Int? {
+    var ret : Int?
+    for num in nums {
+        if let cur = ret {
+            if (num < cur) {
+                ret = num
+            }
+        }
+        else {
+            ret = num
+        }
+    }
+    
+    return ret;
+}
 
 
 
@@ -176,7 +209,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(nums: values1)
 
 
 
@@ -187,7 +220,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(nums: values2)
 
 
 
