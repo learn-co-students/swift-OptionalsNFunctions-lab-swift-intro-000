@@ -194,4 +194,4 @@ let values2: [Int] = []
 
 
 
-//: See here on the solution branch for the solution link
+//: Click [here](https://github.com/learn-co-curriculum/swift-OptionalsNFunctions-lab/blob/solution/OptionalsFunctions.playground/Pages/solution.xcplaygroundpage/Contents.swift) to see the solution on GitHub.
