@@ -16,9 +16,8 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
-
-
+// petName is a String variable
+// The value of petName is "Scooter the Turtle 🐢"
 
 
 
@@ -27,9 +26,8 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
-
-
+// otherPetName is an optional String
+// at this point its value is nil
 
 
 
@@ -38,7 +36,7 @@ var otherPetName: String?
  */
 
 
-
+// at this point its value is nil
 
 
 
@@ -50,9 +48,8 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
-
-
+// thirdPetName is an optional String
+// its value is nil
 
 
 
@@ -63,7 +60,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+thirdPetName = "Fido"
 
 
 
@@ -76,9 +73,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
-
-
+// expected an optional including the String Fido
 
 
 
@@ -89,7 +86,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -102,7 +101,13 @@ var thirdPetName: String? = nil
 
 
 
-
+func printPetName(name: String?) {
+    if let name = name {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -110,8 +115,10 @@ var thirdPetName: String? = nil
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
- // write your code here
-
+printPetName(name: thirdPetName)
+// above prints Fido
+printPetName(name: otherPetName)
+// abobe prints There is no pet name!
 
 
 
@@ -125,7 +132,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(_ numbers: [Int]) -> Int {
+    return numbers.min()!
+}
 
 
 
@@ -138,9 +147,9 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
+minimum(values1)
 
-
-
+// expect 2 and got 2
 
 
 
@@ -151,8 +160,8 @@ let values2: [Int] = []
 // write your code here
 
 
-
-
+// minimum(values2)
+// this return a bad instruction error
 
 
 
@@ -163,10 +172,13 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum(_ numbers: [Int]) -> Int? {
+    guard numbers.count > 0 else {return nil}
+    return numbers.min()
+}
 
 
-
-
+//
 
 
 
@@ -175,10 +187,10 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(values1)
 
 
-
-
+// expect return value to be an optional Int
 
 
 
@@ -190,8 +202,8 @@ let values2: [Int] = []
 
 
 
-
-
+maybeMinimum(values2)
+// expect return value to be nil
 
 
 //: Click [here](https://github.com/learn-co-curriculum/swift-OptionalsNFunctions-lab/blob/solution/OptionalsFunctions.playground/Pages/solution.xcplaygroundpage/Contents.swift) to see the solution on GitHub.
