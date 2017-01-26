@@ -17,7 +17,7 @@ var petName = "Scooter the Turtle 🐢"
 
 
 
-
+// string
 
 
 
@@ -28,7 +28,8 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// optional string
+// value = nil
 
 
 
@@ -37,7 +38,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -51,7 +52,8 @@ var thirdPetName: String? = nil
 
 
 
-
+// optional string
+// value = nil
 
 
 
@@ -63,10 +65,11 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Aira"
 
 
-
-
+// string values
+// optional string
 
 
 
@@ -77,10 +80,10 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+print(thirdPetName)
 
 
-
-
+// expect to see "Aira"
 
 
 /*: question7
@@ -89,7 +92,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -102,7 +107,14 @@ var thirdPetName: String? = nil
 
 
 
-
+func printPetName(_ petName : String?) {
+    if let petName = petName {
+        print(petName)
+    }
+    else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,7 +125,7 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
+printPetName(thirdPetName)
 
 
 
@@ -125,7 +137,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(_ ints : [Int]) -> Int{
+    return ints.min()!
+}
 
 
 
@@ -138,7 +152,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(values1)
 
 
 
@@ -151,10 +165,10 @@ let values2: [Int] = []
 // write your code here
 
 
+//minimum(values2)
 
 
-
-
+// fatal error: unexpectedly found nil while unwrapping an Optional value
 
 
 /*: question13
@@ -164,7 +178,14 @@ let values2: [Int] = []
 
 
 
-
+func maybeMinum(_ ints : [Int]) -> Int? {
+    if ints.isEmpty {
+        return nil
+    }
+    else {
+        return ints.min()
+    }
+}
 
 
 
@@ -177,9 +198,9 @@ let values2: [Int] = []
 
 
 
+maybeMinum(values1)
 
-
-
+// 2
 
 
 /*: question15
@@ -188,9 +209,9 @@ let values2: [Int] = []
 // write your code here
 
 
+maybeMinum(values2)
 
-
-
+// nil
 
 
 
