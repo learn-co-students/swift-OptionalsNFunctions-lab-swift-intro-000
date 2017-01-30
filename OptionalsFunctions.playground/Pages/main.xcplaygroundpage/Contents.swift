@@ -63,7 +63,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+thirdPetName = "Lucy"
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if thirdPetName != nil {
+    print(thirdPetName!)
+}
 
 
 
@@ -101,8 +103,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+func printPetName(_ name: String?) {
+    if name != nil {
+        print(name!)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +119,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(thirdPetName)
+printPetName(otherPetName)
 
 
 
@@ -125,7 +133,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(_ list: [Int]) -> Int {
+    return list.min()!
+}
 
 
 
@@ -136,7 +146,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(values1)
 
 
 
@@ -150,7 +160,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(values2)
 
 
 
@@ -162,7 +172,13 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(_ list: [Int]?) -> Int? {
+    if list == nil {
+        return nil
+    } else {
+        return list!.min()
+    }
+}
 
 
 
@@ -175,7 +191,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values1)
 
 
 
@@ -186,7 +202,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(values2)
 
 
 
