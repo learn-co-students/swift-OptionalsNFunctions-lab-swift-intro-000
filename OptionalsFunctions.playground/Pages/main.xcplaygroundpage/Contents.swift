@@ -15,6 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
+//String value is "Scooter the Turtle 🐢"
+
 
 
 
@@ -27,6 +29,8 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
+//optional String value is nil
+
 
 
 
@@ -37,7 +41,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -49,6 +53,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
+//optional String value is nil
 
 
 
@@ -62,7 +67,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "Miki"
+//tipe String
 
 
 
@@ -76,9 +82,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
-
-
+//Optional("Miki")
 
 
 
@@ -88,7 +94,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +108,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,9 +126,10 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
-
-
+// when i call first time "Miki" second time "There is no pet name!"
 
 
 
@@ -124,7 +139,17 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(numbers: [Int]) -> Int {
+    var min = numbers[0]
+    let number = numbers.dropFirst()
+    for i in number {
+        if i < min {
+            min = i
+        }
+    }
+    
+    return min
+}
 
 
 
@@ -137,7 +162,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(numbers: values1)
 
 
 
@@ -150,7 +175,9 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+//minimum(numbers: values2)
 
+//vill be arror beckouse values2 is ampty
 
 
 
@@ -162,7 +189,22 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(numbers: [Int]) -> Int? {
+    
+    if numbers.isEmpty {
+        return nil
+    }
+    var min = numbers[0]
+    let number = numbers.dropFirst()
+    for i in number {
+        if i < min {
+            min = i
+        }
+    }
+    print(min)
+    return min
+    
+}
 
 
 
@@ -175,7 +217,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(numbers: values1)
 
+//2
 
 
 
@@ -186,7 +230,8 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(numbers: values2)
+//nil
 
 
 
