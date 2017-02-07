@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//string scooter the turtle
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// optional string nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// opt string
 
 
 
@@ -63,7 +63,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+thirdPetName = "Paddy"
 
 
 
@@ -79,7 +79,7 @@ var thirdPetName: String? = nil
 
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +89,10 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let doggy = thirdPetName {
+    print(doggy)
+    
+}
 
 
 
@@ -101,7 +104,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name: String?){
+    if let pet = name {
+        print(pet)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,8 +122,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
-
+printPetName(name: thirdPetName)
+printPetName(name: otherPetName)
 
 
 
@@ -126,7 +135,15 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum(listInts: [Int]) -> Int {
+    var isLowest = listInts[0]
+    for num in listInts {
+        if num < isLowest {
+            isLowest = num
+        }
+    }
+    return isLowest
+}
 
 
 
@@ -137,7 +154,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(listInts: values1)
 
 
 
@@ -150,7 +167,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(listInts: values2) exception out of bounds
 
 
 
@@ -162,6 +179,18 @@ let values2: [Int] = []
  */
 // write your code here
 
+func maybeMinimum(listInts: [Int]) -> Int? {
+    if listInts.isEmpty {
+        return nil
+    }
+    var isLowest = listInts[0]
+    for num in listInts {
+        if num < isLowest {
+            isLowest = num
+        }
+    }
+    return isLowest
+}
 
 
 
@@ -175,7 +204,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(listInts: values1)
 
 
 
@@ -186,7 +215,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(listInts: values2)
 
 
 
