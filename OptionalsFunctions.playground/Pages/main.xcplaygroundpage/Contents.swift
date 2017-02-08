@@ -16,6 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
+// The type is String. It has value which is scooter the turtle.
 
 
 
@@ -28,6 +29,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
+// The type is Optional String. It has value nil.
 
 
 
@@ -36,7 +38,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+// nil value
 
 
 
@@ -49,7 +51,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+// The type is string and it has nil value.
 
 
 
@@ -62,7 +64,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "Kitty"
+// The type is string.
 
 
 
@@ -76,10 +79,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+// print(thirdPetName)
 
-
-
-
+// I see that it prints "Optional" attached to Kitty.
 
 
 
@@ -88,7 +90,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let myPetname = thirdPetName {
+    print("The value of thirdPetname is same as \(myPetname)")
+}
 
 
 
@@ -100,9 +104,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+    print ("There is no pet name!")
+}
+}
 
 
 
@@ -113,6 +121,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,9 +134,17 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
+func minimum(array: [Int]) ->  (Int) {
+    var currentMin = array[0]
+    
+    for value in array[1..<array.count] {
+        if value < currentMin {
+            currentMin = value
+            
+        }
+    }
+    return (currentMin)
+}
 
 
 
@@ -134,10 +152,12 @@ var thirdPetName: String? = nil
 /*: question11
  ### 11. Call your `minimum` function with the following array. What value do you expect to get back? What value did you get back?
  */
-let values1 = [4, 12, 3, 2, 9, 14, 11]
+// let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+let values1 = minimum(array: [4, 12, 3, 2, 9, 14, 11] )
 
+print("min is \(values1)")
 
 
 
@@ -147,11 +167,13 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 /*: question12
  ### 12. Call your `minimum` function with the following empty array. What happens when you call your function?
  */
-let values2: [Int] = []
+// let values2: [Int] = []
 // write your code here
 
 
+let values2: [Int] = []
 
+// I see nothing prints to the console.
 
 
 
@@ -162,10 +184,16 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
-
-
+func maybeMinimum(array: [Int]) -> (Int)? {
+    if array.isEmpty { return nil }
+    var currentMin = array[0]
+    for value in array[1..<array.count] {
+        if value < currentMin {
+            currentMin = value
+        }
+    }
+    return (currentMin)
+}
 
 
 
@@ -175,7 +203,11 @@ let values2: [Int] = []
  */
 // write your code here
 
+let otherValues1 = maybeMinimum(array: [4, 12, 3, 2, 9, 14, 11] )
 
+print("min is \(otherValues1)")
+
+// I see it prints "min is Optional(2) to the console.
 
 
 
@@ -187,10 +219,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+let otherValues2: [Int] = []
 
-
-
-
+// The value is nil.
 
 
 
