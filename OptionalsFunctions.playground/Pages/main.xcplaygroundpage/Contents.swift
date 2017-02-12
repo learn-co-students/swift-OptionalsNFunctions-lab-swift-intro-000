@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+// type is String and value is "Scooter the Turtle 🐢"
 
 
 
@@ -29,7 +29,7 @@ var otherPetName: String?
 
 
 
-
+// type is Optional and value is nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// type is Optional and value is nil
 
 
 
@@ -63,7 +63,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Petunia"
 
+// can assign String values, after assigning a value its type is still Optional
 
 
 
@@ -77,7 +79,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +90,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,8 +104,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+func printPetName(somePetName: String?) {
+    if let somePetName = somePetName {
+        print(somePetName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +121,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(somePetName: thirdPetName)
 
+printPetName(somePetName: otherPetName)
 
 
 
@@ -124,7 +135,11 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func minimum(list: [Int]) -> (Int) {
+    let min = list.min()
+    return min!
 
+}
 
 
 
@@ -138,7 +153,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -150,6 +165,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+// minimum(list: values2)
 
 
 
@@ -164,7 +180,14 @@ let values2: [Int] = []
 
 
 
-
+func maybeMinimum(array: [Int]) -> (Int?) {
+    let min = array.min()
+    if array.isEmpty {
+    return nil
+    } else {
+        return min!
+    }
+}
 
 
 
@@ -176,7 +199,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(array: values1)
 
 
 
@@ -188,7 +211,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(array: values2)
 
 
 
