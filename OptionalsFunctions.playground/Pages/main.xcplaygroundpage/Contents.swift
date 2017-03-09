@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// String type
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// its optional type value is nil
 
 
 
@@ -38,7 +38,7 @@ var otherPetName: String?
  */
 
 
-
+// nil is current value
 
 
 
@@ -47,10 +47,10 @@ var otherPetName: String?
 /*: question4
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
-var thirdPetName: String? = nil
+var thirdPetName: String?
 
 
-
+// this is also nil value
 
 
 
@@ -63,8 +63,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+// Optional type value is nil
+thirdPetName = "MItti"
 
 
 
@@ -77,7 +77,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let newValue = thirdPetName {
+    print(newValue)
+}
 
 
 
@@ -101,8 +103,15 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
-
+printPetName(petName: "Koshka")
 
 
 
@@ -112,9 +121,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+print(thirdPetName)
 
-
-
+print(otherPetName)
 
 
 
@@ -125,7 +134,18 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(lists: [Int]) -> Int {
+    var min = lists[0]
+    let rest = lists.dropLast()
+    
+    for i in rest {
+        if i < min {
+            min = i
+        }
+    }
+    
+    return min
+}
 
 
 
@@ -137,8 +157,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
-
+minimum(lists: values1)
 
 
 
@@ -150,6 +169,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+// minimum(lists: values2)
 
 
 
@@ -162,7 +182,22 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(lists: [Int]) -> Int? {
+    if lists.isEmpty {
+        return nil
+    }
+    
+    var min = lists[0]
+    let rest = lists.dropLast()
+    
+    for i in rest {
+        if i < min {
+            min = i
+        }
+    }
+    
+    return min
+}
 
 
 
@@ -174,7 +209,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(lists: values1)
 
 
 
@@ -189,7 +224,7 @@ let values2: [Int] = []
 
 
 
-
+maybeMinimum(lists: values2)
 
 
 
