@@ -128,7 +128,7 @@ print(otherPetName)
 // write your code here
 
 
-func minimum(numbers: [Int]) -> [Int] {
+func minimum(numbers: [Int]) -> Int {
  
     var first = numbers[0]
     
