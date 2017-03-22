@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//String
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+//Optional
 
 
 
@@ -37,6 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
+//nil
 
 
 
@@ -49,7 +50,8 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//Optional
+//nil
 
 
 
@@ -63,9 +65,10 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Stanley"
 
-
-
+//Strings
+//Optional
 
 
 
@@ -76,7 +79,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+//print(thirdPetName)
+//Optional("Stanley")
 
 
 
@@ -88,7 +92,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +106,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petsName: String?) {
+    if let petsName = petsName {
+        print(petsName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,9 +125,13 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+//printPetName(petsName: thirdPetName)
 
+//"Stanley"
 
+//printPetName(petsName: otherPetName)
 
+//"There is no pet name!"
 
 
 
@@ -124,7 +140,19 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(intList: Array<Int>) -> Int {
+    var min = -1
+    for i in intList {
+        if min == -1 {
+            min = i
+        } else if i < min {
+            min = i
+        } else {
+            
+        }
+    }
+    return min
+}
 
 
 
@@ -137,7 +165,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(intList: values1)
 
 
 
@@ -150,8 +178,8 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
-
+minimum(intList: values2)
+//returns the original value of var min
 
 
 
@@ -162,7 +190,23 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(intList: Array<Int?>) -> Int? {
+    if intList.isEmpty {
+        return nil
+    } else {
+        var min = -1
+        for i in intList {
+            if min == -1 {
+                min = i!
+            } else if i! < min {
+                min = i!
+            } else {
+                
+            }
+        }
+        return min
+    }
+}
 
 
 
@@ -175,7 +219,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(intList: values1)
 
 
 
@@ -188,7 +232,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(intList: values2)
 
 
 
