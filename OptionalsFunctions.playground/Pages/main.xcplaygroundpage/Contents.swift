@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// petName is a string with the value of "Scooter the Turtle."
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// The valu of the otherPetName is a optional with no assigned value making it nil.
 
 
 
@@ -38,7 +38,7 @@ var otherPetName: String?
  */
 
 
-
+// nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// This variable is another optional with the value of nil assigned.
 
 
 
@@ -63,9 +63,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Walter the pet"
 
-
-
+// This variable is a string optional so you can assign it any string value. The type is still an optional.
 
 
 
@@ -75,7 +75,7 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +102,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,7 +121,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
+printPetName(petName: otherPetName)
+printPetName(petName: thirdPetName)
 
 
 
@@ -125,8 +134,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+func minimun(listOfInts: [Int]) -> Int {
+    return listOfInts.sorted()[0]
+}
 
 
 
@@ -137,7 +147,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimun(listOfInts: values1)
 
 
 
@@ -150,10 +160,10 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+//minimun(listOfInts: values2)
 
 
-
-
+// An error comes up."Bad instructions"
 
 
 
@@ -162,7 +172,13 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(arrayOfInts: [Int]) -> Int? {
+    if arrayOfInts == nil {
+        return nil
+    } else {
+        return arrayOfInts.sorted()[0]
+    }
+}
 
 
 
@@ -175,7 +191,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(arrayOfInts: values1)
 
 
 
@@ -187,7 +203,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(arrayOfInts: values2)
 
 
 
