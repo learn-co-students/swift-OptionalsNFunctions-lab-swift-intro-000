@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// the type of the variable petName is String and its value is "Scooter the Turtle 🐢"
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// the type of the variable otherPetName is optional String and its value is nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//the current value of otherPetName is  nil
 
 
 
@@ -48,38 +48,29 @@ var otherPetName: String?
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
+var asdasd: String? = "asd"
 
+// the type of the variable thirdPetName is optional String and its value is nil
 
-
-
-
-
-
-
+thirdPetName = asdasd
 
 /*: question5
  ### 5. Assign a value to `thirdPetName`. What type of values can you assign to `thirdPetName`? After assigning a value, what is its type?
  */
 // write your code here
 
-
-
-
-
-
-
-
-
-
+thirdPetName = "Riven"
+// You can assign to thirdPetName only Strings and optional Strings
+// The type of thirdPetName still optional String
 /*: question6
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
 
+print(thirdPetName)
 
 
-
-
+//I expect to see optional("Pet Name") :)
 
 
 
@@ -88,11 +79,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
+if let unwrPetName = thirdPetName {
+	print(unwrPetName)
+}
 
 
 /*: question8
@@ -101,10 +90,14 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func printPetName(ptName: String?) {
 
-
-
-
+	if let name2 = ptName {
+		print(name2)
+	} else {
+		print("There is no pet name!")
+	}
+}
 
 
 /*: question9
@@ -112,11 +105,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(ptName: thirdPetName) // prints "Riven"
 
-
-
-
-
+printPetName(ptName: otherPetName) // prints "There is no pet name!"
 
 
 /*: question10
@@ -124,7 +115,15 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(nums: [Int]) -> Int {
+	var min = nums[0]
+	for item in nums {
+		if item < min {
+			min = item
+		}
+	}
+	return min
+}
 
 
 
@@ -137,7 +136,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(nums: values1)
 
 
 
@@ -150,7 +149,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(nums: values2) //There is an error because values2 array is empty
 
 
 
@@ -162,7 +161,19 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(listOfNums: [Int]) -> Int? {
+	if listOfNums.isEmpty {
+		return nil
+	}else {
+		var min = listOfNums[0]
+		for item in listOfNums {
+			if item < min {
+				min = item
+			}
+		}
+		return min
+	}
+}
 
 
 
@@ -175,7 +186,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(listOfNums: values1)
 
 
 
@@ -187,9 +198,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(listOfNums: values2)
 
-
-
+//I expect the return value to be nil, because function can return optional Int and values2 is empty
 
 
 
