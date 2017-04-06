@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+// type is String and the value is "Scooter the Turtle 🐢"
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// optional String and its value is nil
 
 
 
@@ -38,7 +38,7 @@ var otherPetName: String?
  */
 
 
-
+// stil nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// optional String and its value is nil
 
 
 
@@ -63,7 +63,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Lovly"
 
+// still it is of type optional
 
 
 
@@ -77,7 +79,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+print(thirdPetName)
 
+// print :  Optional("Lovly")
 
 
 
@@ -89,7 +93,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -103,7 +109,14 @@ var thirdPetName: String? = nil
 
 
 
-
+func printPetName(petName: String?){
+    
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,7 +126,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -126,7 +140,16 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum(items: [Int]) -> Int {
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +161,9 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
+minimum(items: values1)
 
+// 2 , 2
 
 
 
@@ -152,10 +177,10 @@ let values2: [Int] = []
 
 
 
+//minimum(items: values2)
 
 
-
-
+// error
 
 /*: question13
  ### 13. Write a new function, `maybeMinimum`. It should handle cases in which the array passed to it is empty. If the array is empty, `nil` should be returned; otherwise, the smallest `Int` in the array should be returned. What should the return type of `maybeMinimum` be? (Note: So far, you haven't seen anything other than optional `String`s. Do you expect other optional types, such as `Int`s, to be handled differently?)
@@ -163,7 +188,21 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(items: [Int]) -> Int? {
+    if items.isEmpty {
+        return nil
+    } else {
+        
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
+}
 
 
 
@@ -175,7 +214,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(items: values1)
 
 
 
@@ -188,7 +227,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(items: values2)
 
 
 
