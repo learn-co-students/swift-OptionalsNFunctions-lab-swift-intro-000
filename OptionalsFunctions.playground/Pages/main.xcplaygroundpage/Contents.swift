@@ -14,6 +14,8 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
+//String
+//Scooter the turtle
 
 
 
@@ -26,8 +28,8 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
-
+//Optional String
+//nil
 
 
 
@@ -36,7 +38,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//nil
 
 
 
@@ -48,8 +50,8 @@ var otherPetName: String?
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
-
-
+//Optional String
+//nil
 
 
 
@@ -61,6 +63,7 @@ var thirdPetName: String? = nil
  ### 5. Assign a value to `thirdPetName`. What type of values can you assign to `thirdPetName`? After assigning a value, what is its type?
  */
 // write your code here
+thirdPetName = "Spot"
 
 
 
@@ -76,7 +79,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -87,8 +90,9 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
-
+if let name = thirdPetName {
+    print(name)
+}
 
 
 
@@ -99,6 +103,14 @@ var thirdPetName: String? = nil
  ### 8. Write a function called `printPetName` that takes a pet's name as a parameter. It should print the pet's name if the pet name exists, or "There is no pet name!" if the pet's name does not exist.
  */
 // write your code here
+
+func printPetName(petName: String?){
+    if let name = petName{
+        print(name)
+    }else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +124,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -123,7 +136,16 @@ var thirdPetName: String? = nil
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
-
+func minimum(item:[Int])-> Int{
+    var min = item[0]
+    let rest = item.dropFirst()
+    for item in rest {
+        if item < min{
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -136,7 +158,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(item: values1)
 
 
 
@@ -149,7 +171,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
  */
 let values2: [Int] = []
 // write your code here
-
+minimum(item: values2)
 
 
 
@@ -162,10 +184,21 @@ let values2: [Int] = []
  */
 // write your code here
 
+func maybeMinimum(items: [Int]) ->Int?{
+    if items.isEmpty {
+        return nil
+    }
 
 
-
-
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -174,7 +207,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(items: values1)
 
 
 
@@ -186,7 +219,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(items: values2)
 
 
 
