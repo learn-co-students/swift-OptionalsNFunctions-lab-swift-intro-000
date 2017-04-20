@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// its a String
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// thats an optional String its value is nil at the moment
 
 
 
@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+// that was asked in question 2 already
 
 
 
@@ -51,7 +51,7 @@ var thirdPetName: String? = nil
 
 
 
-
+// thats also an optional String with value nil
 
 
 
@@ -63,8 +63,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+thirdPetName = "Emilie"
+// i can assign Strings or nil its still an optional String
 
 
 
@@ -77,7 +77,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +89,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let name = thirdPetName {
+    print(name)
+}
 
 
 
@@ -101,7 +103,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +120,7 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
 
 
 
@@ -124,7 +132,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(_ list:[Int]) -> Int {
+    return list.min()!
+}
 
 
 
@@ -137,7 +147,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(values1)
 
 
 
@@ -151,7 +161,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+// minimum(values2) //causes error
 
 
 
@@ -163,7 +173,13 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(_ list:[Int]) -> Int? {
+    if let min = list.min() {
+        return min
+    } else {
+        return nil
+    }
+}
 
 
 
@@ -174,7 +190,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(values1)
 
 
 
@@ -187,7 +203,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values2)
 
 
 
