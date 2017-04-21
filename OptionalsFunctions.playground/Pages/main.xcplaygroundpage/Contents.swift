@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// String
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// String?
 
 
 
@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+// nil
 
 
 
@@ -51,9 +51,8 @@ var thirdPetName: String? = nil
 
 
 
-
-
-
+// String?
+// nil
 
 
 
@@ -65,7 +64,9 @@ var thirdPetName: String? = nil
 
 
 
-
+// String
+thirdPetName = "jos"
+// String?
 
 
 
@@ -76,7 +77,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -90,7 +91,9 @@ var thirdPetName: String? = nil
 
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -102,7 +105,13 @@ var thirdPetName: String? = nil
 
 
 
-
+func printPetName(petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +121,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +134,19 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(contents: [Int]) -> Int? {
+    var min: Int? = nil
+    for i in contents {
+        if let mint = min {
+            if i < mint {
+                min = i
+            }
+        } else {
+            min = i
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +160,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+print(minimum(contents: values1))
 
 
 
@@ -150,7 +172,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+print(minimum(contents: values2))
 
 
 
