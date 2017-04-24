@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//it is a String and it's value is Scooter the Turtle 🐢
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// it is an optional String aka String? it's value is nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// it is String? and it is nil
 
 
 
@@ -63,9 +63,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName =  "Estrella"
 
-
-
+//still String?
 
 
 
@@ -78,7 +78,8 @@ var thirdPetName: String? = nil
 
 
 
-
+print(thirdPetName)
+// optional("Estrella")
 
 
 
@@ -89,7 +90,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -103,7 +106,15 @@ var thirdPetName: String? = nil
 
 
 
-
+func printPetName (petName: String?) -> String{
+    if let petName = petName {
+         print (petName)
+        return petName
+    } else {
+         print("There is no pet name!")
+        return "There is no pet name!"
+    }
+}
 
 
 
@@ -112,9 +123,11 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petName: thirdPetName)
+// will print Estrella
 
-
-
+printPetName(petName: otherPetName)
+//will print There is no pet name!
 
 
 
@@ -123,7 +136,15 @@ var thirdPetName: String? = nil
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
-
+func minimum (numbers: [Int]) -> Int {
+  var smallest = numbers[0]
+    for index in 1 ..< numbers.count {
+        if numbers[index] < smallest {
+            smallest = numbers[index]
+        }
+    }
+    return smallest
+}
 
 
 
@@ -139,7 +160,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
-
+minimum(numbers: values1)
 
 
 
@@ -150,7 +171,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+// minimum(numbers: values2) doesn't work cuz it is empty
 
 
 
@@ -163,7 +184,23 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum (numbers : [Int]) -> Int? {
+    if numbers.isEmpty {
+        return nil
+    } else {
+        var smallest = numbers[0]
+        for index in 1 ..< numbers.count {
+            if numbers[index] < smallest {
+                smallest = numbers[index]
+            }
+        }
+        return smallest
+        
+    }
 
+
+    
+}
 
 
 
@@ -176,8 +213,8 @@ let values2: [Int] = []
 // write your code here
 
 
-
-
+maybeMinimum(numbers: values1)
+// still optional2
 
 
 
@@ -189,9 +226,9 @@ let values2: [Int] = []
 
 
 
+maybeMinimum(numbers: values2)
 
 
-
-
+//nil
 
 //: Click [here](https://github.com/learn-co-curriculum/swift-OptionalsNFunctions-lab/blob/solution/OptionalsFunctions.playground/Pages/solution.xcplaygroundpage/Contents.swift) to see the solution on GitHub.
