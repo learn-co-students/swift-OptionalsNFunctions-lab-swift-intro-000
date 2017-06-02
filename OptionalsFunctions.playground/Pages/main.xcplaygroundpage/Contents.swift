@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+print(otherPetName)
 
 
 
@@ -61,7 +61,7 @@ var thirdPetName: String? = nil
  ### 5. Assign a value to `thirdPetName`. What type of values can you assign to `thirdPetName`? After assigning a value, what is its type?
  */
 // write your code here
-
+thirdPetName = "Rio"
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let a = thirdPetName {
+    print(a)
+}
 
 
 
@@ -100,7 +102,14 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName : String?) {
+    if let a = petName {
+        print(a)
+    }
+    else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -111,7 +120,8 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,6 +134,10 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func minimum(nums : [Int]) -> Int? {
+    var a = nums.min()
+    return a
+}
 
 
 
@@ -136,7 +150,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+print(minimum(nums: values1))
 
 
 
@@ -149,7 +163,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
  */
 let values2: [Int] = []
 // write your code here
-
+print(minimum(nums: values2))
 
 
 
