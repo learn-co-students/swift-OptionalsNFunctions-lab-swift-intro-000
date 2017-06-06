@@ -16,7 +16,9 @@
 var petName = "Scooter the Turtle 🐢"
 
 
+// petName is of type String
 
+// petName value is "Scooter the Turtle 🐢
 
 
 
@@ -28,7 +30,9 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
+// otherPetName is of type Optional String
 
+// otherPetName value is nil
 
 
 
@@ -37,7 +41,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// The current value of otherPetName is Nil
 
 
 
@@ -50,7 +54,9 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
+// thirdPetName is type Optional String
 
+// thirdPetName's value is Nil
 
 
 
@@ -63,7 +69,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Daniel"
 
+// thirdPetName is still of type Optional String
 
 
 
@@ -77,7 +85,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+print(thirdPetName)
 
+// Optional("Daniel")
 
 
 
@@ -88,10 +98,10 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
+if let name = thirdPetName{
+    
+    print(name)
+}
 
 
 
@@ -101,7 +111,17 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?){
+    
+    if let name = petName{
+        
+        print(name)
+        
+    } else{
+        
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,8 +132,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +144,19 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(items: [Int]) -> Int{
+    
+    var min = items[0]
+    
+    let rest = items.dropFirst()
+    
+    for item in rest{
+        if item < min{
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -139,7 +171,10 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
+minimum(items: values1)
 
+// 2
+// 2
 
 
 
@@ -150,8 +185,9 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+//minimum(items: values2)
 
-
+// fatal error, out of range
 
 
 
@@ -163,7 +199,27 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(items: [Int]) -> Int?{
+    
+    if items.isEmpty{
+        return nil
+    }
+    
+    var min = items[0]
+    
+    let rest = items.dropFirst()
+    
+    for item in rest{
+        
+        if item < min{
+            
+            min = item
+        }
+    }
+    
+    return min
+    
+}
 
 
 
@@ -175,6 +231,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(items: values1)
+
+// 2
 
 
 
@@ -188,7 +247,9 @@ let values2: [Int] = []
 // write your code here
 
 
+maybeMinimum(items: values2)
 
+// nil
 
 
 
