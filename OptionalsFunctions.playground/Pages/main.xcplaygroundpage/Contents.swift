@@ -16,8 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
-
+print(petName)
 
 
 
@@ -29,7 +28,7 @@ var otherPetName: String?
 
 
 
-
+print(otherPetName)
 
 
 
@@ -51,7 +50,7 @@ var thirdPetName: String? = nil
 
 
 
-
+print(thirdPetName)
 
 
 
@@ -65,7 +64,7 @@ var thirdPetName: String? = nil
 
 
 
-
+thirdPetName = "Klaus"
 
 
 
@@ -75,7 +74,7 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
+print(thirdPetName)
 
 
 
@@ -89,7 +88,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +101,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+        print("there is no pet name!")
+    }
+}
 
 
 
@@ -112,8 +119,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -126,7 +133,16 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum(items: [Int]) -> Int {
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -136,7 +152,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(items: values1)
 
 
 
@@ -162,7 +178,20 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(items: [Int]) -> Int? {
+    if items.isEmpty {
+        return nil
+    }
+    
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -174,7 +203,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(items: values1)
 
 
 
@@ -186,7 +215,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(items: values2)
 
 
 
