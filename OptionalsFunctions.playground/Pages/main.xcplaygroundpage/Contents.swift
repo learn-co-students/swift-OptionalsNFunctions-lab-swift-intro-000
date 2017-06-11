@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+// It's a String type with the value "Scooter the Turtle 🐢"
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+//It's an Optional String type and value is nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -52,7 +52,7 @@ var thirdPetName: String? = nil
 
 
 
-
+// It's an Option String type with nil value
 
 
 
@@ -64,9 +64,9 @@ var thirdPetName: String? = nil
 
 
 
+thirdPetName = "Giggles"
 
-
-
+// It is still an Optional String type
 
 
 
@@ -77,11 +77,11 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+print(thirdPetName)
 
 
 
-
-
+// Optional("Giggles")
 
 /*: question7
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
@@ -89,9 +89,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,23 +100,26 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
-
-
+func printPetName(petName: String?) {
+    
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
 
 
+printPetName(petName: thirdPetName)
+// "Giggles"
 
 
-
-
+print(otherPetName)
+// There is no pet name
 
 
 /*: question10
@@ -125,9 +128,22 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func minimum(numbers: [Int]) -> Int {
+ 
+    var first = numbers[0]
+    
+    let rest = numbers.dropFirst()
+    
+    for number in rest {
+        if number < first {
+            first = number
+        }
+    }
+    return first
+}
 
 
-
+// The return type should be Optional Int
 
 
 
@@ -138,7 +154,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(numbers: values1)
 
 
 
@@ -152,7 +168,7 @@ let values2: [Int] = []
 
 
 
-
+minimum(numbers: values2)
 
 
 
@@ -163,10 +179,30 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum(items: [Int?]) -> Int? {
+    
+    if items.isEmpty {
+        
+        return nil
+    }
+        
+        var min = items[0]
+        
+        let rest = items.dropFirst()
+        
+        for item in rest {
+            
+            if item < min {
+                
+                min = item
+                
+            }
+        }
+         return min
+}
 
 
-
-
+// The reture type of maybeMinimum should be Optional Int
 
 
 
@@ -175,11 +211,11 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(items: values1)
 
 
 
-
-
+// Optional(2)
 
 
 /*: question15
@@ -188,10 +224,10 @@ let values2: [Int] = []
 // write your code here
 
 
+maybeMinimum(items: values2)
 
 
 
-
-
+// nil
 
 //: Click [here](https://github.com/learn-co-curriculum/swift-OptionalsNFunctions-lab/blob/solution/OptionalsFunctions.playground/Pages/solution.xcplaygroundpage/Contents.swift) to see the solution on GitHub.
