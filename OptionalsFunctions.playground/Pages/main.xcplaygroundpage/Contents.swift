@@ -15,7 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// String
+// "Scooter the Turtle 🐢"
 
 
 
