@@ -62,7 +62,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "geertje"
 
 
 
@@ -77,7 +77,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName ?? "geen naam")
 
 
 
@@ -89,7 +89,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let petNaam = thirdPetName{
+  print(petNaam)
+}
 
 
 
@@ -100,10 +102,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func printPetName(naam : String?){
+  
+  print(naam ?? "There is no petname")
+}
 
-
-
-
+  printPetName(naam: thirdPetName)
+  
+  
+  
+  
 
 
 
@@ -113,7 +121,7 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
+printPetName(naam: otherPetName)
 
 
 
@@ -125,20 +133,26 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
-
-
+func minimum(getal: [Int]) -> Int? {
+  if getal.count == 0{
+    return nil
+  }
+  else {
+  let kleinste = getal.min()
+  
+  
+     return (kleinste )
+  }
+}
 
 /*: question11
  ### 11. Call your `minimum` function with the following array. What value do you expect to get back? What value did you get back?
  */
-let values1 = [4, 12, 3, 2, 9, 14, 11]
+let values1 = [4, 12, 3, 0, 2, 9, 14, -4, 11, 1]
 // write your code here
 
 
-
+minimum(getal: values1)
 
 
 
@@ -152,7 +166,7 @@ let values2: [Int] = []
 
 
 
-
+minimum(getal: values2)
 
 
 
