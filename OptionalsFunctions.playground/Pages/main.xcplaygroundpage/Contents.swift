@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//nil
 
 
 
@@ -39,7 +39,7 @@ var otherPetName: String?
 
 
 
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+//nil
 
 
 
@@ -62,7 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+//String
+thirdPetName = "Sarah"
 
 
 
@@ -75,7 +76,7 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
+//print(thirdPetName)
 
 
 
@@ -87,7 +88,9 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
+//if let thirdPet = thirdPetName {
+//    print(thirdPet)
+//}
 
 
 
@@ -99,7 +102,16 @@ var thirdPetName: String? = nil
  ### 8. Write a function called `printPetName` that takes a pet's name as a parameter. It should print the pet's name if the pet name exists, or "There is no pet name!" if the pet's name does not exist.
  */
 // write your code here
-
+func printPetName(petName: String?) {
+    
+    if let petName = petName {
+        print(petName)
+    }
+    else {
+        print("There is no pet name!")
+    }
+    
+}
 
 
 
@@ -111,7 +123,7 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
-
+printPetName(petName: thirdPetName)
 
 
 
@@ -123,7 +135,21 @@ var thirdPetName: String? = nil
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
-
+func minimum(list: [Int]) -> Int {
+    
+    var minimum = Int.max
+    
+    for number in list {
+        
+        if (number < minimum) {
+            minimum = number
+        }
+        
+    }
+    
+    return minimum
+    
+}
 
 
 
@@ -137,7 +163,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(list: values1)
 
 
 
@@ -151,7 +177,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+minimum(list: values2)
 
 
 
@@ -162,7 +188,16 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(list: [Int]) -> Int? {
+    
+    if list.isEmpty {
+        return nil
+    }
+    else {
+        return minimum(list: list)
+    }
+    
+}
 
 
 
@@ -174,7 +209,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(list: values1)
 
 
 
@@ -186,7 +221,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(list: values2)
 
 
 
