@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+//String - "Scooter the Turtle 🐢"
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//Optional String - undeclared
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//Optional String - nil
 
 
 
@@ -62,6 +62,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Donkeylips"
 
 
 
@@ -76,7 +77,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +89,11 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+} else {
+    print("Nil")
+}
 
 
 
@@ -101,7 +106,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name: String?) {
+    if let petName = name {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +123,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(name: thirdPetName)
+printPetName(name: otherPetName)
 
 
 
@@ -124,7 +136,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(list: [Int]) -> Int {
+    var min = list[0]
+    let rest = list.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +159,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -151,7 +172,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+//minimum(list: values2)
 
 
 
@@ -162,7 +183,19 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    }
+    var min = list[0]
+    let rest = list.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -175,7 +208,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values1)
 
 
 
@@ -188,7 +221,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(list: values2)
 
 
 
