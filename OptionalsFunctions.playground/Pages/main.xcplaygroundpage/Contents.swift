@@ -15,6 +15,9 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
+//String
+//Scooter the Turtle 🐢
+
 
 
 
@@ -27,6 +30,10 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
+//String?
+
+// nil
+
 
 
 
@@ -37,7 +44,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -50,7 +57,9 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
+//String?
 
+//nil
 
 
 
@@ -63,9 +72,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Puss the Boots"
 
-
-
+// String?
 
 
 
@@ -77,7 +86,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +98,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let catName = thirdPetName {
+    print(catName)
+}
 
 
 
@@ -101,8 +112,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+func printPetName(name: String?) {
+    if let name = name {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +128,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(name: thirdPetName)
 
+printPetName(name: otherPetName)
 
 
 
@@ -125,7 +143,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(number: [Int]) -> [Int] {
+    return number
+}
 
 
 
@@ -137,7 +157,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(number: values1)
 
 
 
@@ -150,7 +170,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+minimum(number: values2)
 
 
 
@@ -162,7 +182,13 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(number: [Int]?) -> [Int]? {
+    if let number = number {
+        return number
+    } else {
+        return nil
+    }
+}
 
 
 
@@ -175,7 +201,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(number: values1)
 
 
 
@@ -187,7 +213,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(number: values2)
 
 
 
