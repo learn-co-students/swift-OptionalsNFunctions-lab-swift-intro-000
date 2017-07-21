@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+//String
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//Optional String
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//NIL
 
 
 
@@ -51,7 +51,7 @@ var thirdPetName: String? = nil
 
 
 
-
+//NIL
 
 
 
@@ -62,7 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "SHeep"
+//Type is String? because never unwrap
 
 
 
@@ -77,7 +78,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -87,7 +88,9 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
+if let myPetName = thirdPetName {
+    print(myPetName)
+}
 
 
 
@@ -101,7 +104,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?) -> String {
+    if let petName = petName {
+        return petName
+    } else {
+        return "There is no pet"
+    }
+}
 
 
 
@@ -112,7 +121,7 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
 
 
 
@@ -124,7 +133,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(numbers:[Int]) -> Int {
+    var min = numbers[0]
+    
+    for number in numbers {
+        if number < min {
+            min = number
+        }
+    }
+    return min
+}
 
 
 
@@ -137,7 +155,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(numbers: values1)
 
 
 
@@ -150,7 +168,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(numbers: values2)
 
 
 
@@ -163,7 +181,20 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(numbers: [Int]) -> Int? {
+    if numbers.isEmpty {
+        return nil
+    } else {
+        var min = numbers[0]
+        for number in numbers {
+            if number < min {
+                min = number
+            }
+        }
+        return min
+    }
+    
+}
 
 
 
@@ -175,7 +206,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(numbers: values1)
 
 
 
@@ -188,7 +219,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(numbers: values2)
 
 
 
