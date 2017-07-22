@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+print(type(of: petName)) //Type String value, Scooter the Turtle 🐢
 
 
 
@@ -25,7 +25,7 @@ var petName = "Scooter the Turtle 🐢"
 /*: question2
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
-var otherPetName: String?
+var otherPetName: String? //Type Optional String, Value nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// Current value nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// type optional string value nil
 
 
 
@@ -63,7 +63,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+thirdPetName = "Rex" // Type is optional string
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName) // should print optional("Rex")
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +103,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?) {
+    if petName==nil {
+        print("There is no pet name!")
+    } else {
+        print("Pet name is \(petName)")
+    }
+}
 
 
 
@@ -113,8 +121,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +132,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(intList: [Int]) -> Int {
+    return intList.min()!
+}
 
 
 
@@ -138,7 +148,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(intList: values1)
 
 
 
@@ -151,7 +161,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+// minimum(intList: values2) //gives error
 
 
 
@@ -162,7 +172,9 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(intList: [Int]) -> Int? {
+    return intList.min()
+}
 
 
 
@@ -173,9 +185,9 @@ let values2: [Int] = []
 /*: question14
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
-// write your code here
+// write your code
 
-
+maybeMinimum(intList: values1)
 
 
 
@@ -187,6 +199,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(intList: values2)
 
 
 
