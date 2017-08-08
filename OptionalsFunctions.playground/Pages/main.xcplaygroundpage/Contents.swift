@@ -15,8 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
-
+//optional string
+//Scooter the Turtle 🐢
 
 
 
@@ -27,7 +27,8 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//optional string
+//nil
 
 
 
@@ -36,7 +37,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//nil
 
 
 
@@ -49,7 +50,8 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//optional string
+//nil
 
 
 
@@ -62,7 +64,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "Bob"
+//strings
+//optional string
 
 
 
@@ -75,8 +79,8 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
-
+print(thirdPetName)
+//optional("bob")
 
 
 
@@ -88,6 +92,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +107,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(name: String?) {
+    if let name = name {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -111,8 +124,8 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
-
-
+printPetName(name: thirdPetName)
+printPetName(name: otherPetName)
 
 
 
@@ -124,7 +137,15 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(list: [Int]) -> Int {
+    var min = list[0]
+    for i in list {
+        if i < min {
+            min = i
+        }
+    }
+    return min
+}
 
 
 
@@ -137,7 +158,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(list: values1)
 
 
 
@@ -150,7 +171,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(list: values2)
 
 
 
@@ -162,7 +183,22 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(list: [Int]) -> Int? {
+    
+    if list.isEmpty {
+        return nil
+    }
+    
+    else {
+        var min = list[0]
+        for i in list {
+            if i < min {
+                min = i
+            }
+        }
+        return min
+    }
+}
 
 
 
@@ -175,9 +211,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(list: values1)
 
-
-
+let test = maybeMinimum(list: values1)
 
 
 
@@ -187,7 +223,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values2)
 
 
 
