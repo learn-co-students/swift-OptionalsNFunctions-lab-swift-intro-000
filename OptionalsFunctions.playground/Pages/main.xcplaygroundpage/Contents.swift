@@ -15,6 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
+string
+
 
 
 
@@ -28,7 +30,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+optional
 
 
 
@@ -36,7 +38,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+nil
 
 
 
@@ -50,8 +52,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
-
+optional. nil
 
 
 
@@ -63,6 +64,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Donkey"
+// optional
 
 
 
@@ -76,7 +79,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +91,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +106,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName (petName: [String]) -> String? {
+    if let name = petName {
+        print(name)
+    } else {
+        print("There is no pet name")
+    }
+}
 
 
 
@@ -111,8 +122,8 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName) 
 
 
 
@@ -124,6 +135,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func minimum(items: [Int]) -> Int {
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +159,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -150,7 +171,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+minimum(values2)
 
 
 
@@ -162,7 +183,19 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMedium(items: [Int]) -> Int? {
+    if items.isEmpty {
+        return nil
+    }
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -176,8 +209,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
-
+maybeMedium(items: values1)
 
 
 
@@ -186,6 +218,8 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
+
+maybeMedium(items: values2)
 
 
 
