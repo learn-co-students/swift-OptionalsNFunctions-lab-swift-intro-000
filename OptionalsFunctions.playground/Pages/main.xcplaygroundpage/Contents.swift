@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//String type with a value of Scooter the Turtle 🐢
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+//String? (optional) with a value of nil
 
 
 
@@ -39,7 +39,7 @@ var otherPetName: String?
 
 
 
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+//String? value is nil
 
 
 
@@ -64,7 +64,8 @@ var thirdPetName: String? = nil
 
 
 
-
+thirdPetName = "Rocket"
+//Can only assign strings. Type remains as String? (optional)
 
 
 
@@ -75,8 +76,8 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
-
+print(thirdPetName)
+// expect to see Optional("Rocket")
 
 
 
@@ -87,7 +88,9 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +103,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName (name:String?) {
+    if name != nil {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -111,11 +120,11 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
+printPetName(name: thirdPetName)
+printPetName(name: otherPetName)
 
 
-
-
-
+//as expected
 
 
 
@@ -126,7 +135,9 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum(list: [Int]) -> Int {
+    return list.min()!
+}
 
 
 
@@ -139,7 +150,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
-
+minimum(list: values1)
 
 
 
@@ -150,9 +161,9 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+//minimum(list: values2)
 
-
-
+//error there is no value to return
 
 
 
@@ -163,7 +174,13 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(values:[Int]?) -> Int? {
+    if (values?.isEmpty)! {
+        return nil
+    } else {
+        return values?.min()
+    }
+}
 
 
 
@@ -175,7 +192,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values: values1)
 
 
 
@@ -187,7 +204,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values: values2)
 
 
 
