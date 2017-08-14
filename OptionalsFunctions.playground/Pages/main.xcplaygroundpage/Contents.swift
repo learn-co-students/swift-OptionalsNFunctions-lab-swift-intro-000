@@ -65,8 +65,7 @@ var thirdPetName: String? = nil
 
 
 
-
-
+thirdPetName = "Bob"
 
 
 
@@ -78,6 +77,7 @@ var thirdPetName: String? = nil
 
 
 
+print("\(String(describing: thirdPetName))")
 
 
 
@@ -89,10 +89,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
-
+if let name = thirdPetName{
+    print("\(name)")
+}
 
 
 /*: question8
@@ -101,7 +100,15 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name:String?){
+    if let name = name{
+        print("\(name)")
+    }
+    else
+    {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,7 +120,7 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
+printPetName(name: thirdPetName)
 
 
 
@@ -124,7 +131,20 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(inp: [Int]) -> Int? {
+    var out:Int? = nil
+    for val in inp{
+        if out == nil {
+            out = val
+        }
+        else if let out2 = out {
+            if out2 > val{
+            out = val
+            }
+        }
+    }
+    return out
+}
 
 
 
@@ -139,7 +159,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
-
+minimum(inp:values1)
 
 
 
@@ -151,7 +171,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+minimum(inp: values2)
 
 
 
@@ -163,6 +183,20 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum(inp: [Int]) -> Int? {
+    var out:Int? = nil
+    for val in inp{
+        if out == nil {
+            out = val
+        }
+        else if let out2 = out {
+            if out2 > val{
+                out = val
+            }
+        }
+    }
+    return out
+}
 
 
 
@@ -177,7 +211,7 @@ let values2: [Int] = []
 
 
 
-
+maybeMinimum(inp: values1)
 
 
 
@@ -189,7 +223,7 @@ let values2: [Int] = []
 
 
 
-
+maybeMinimum(inp: values2)
 
 
 
