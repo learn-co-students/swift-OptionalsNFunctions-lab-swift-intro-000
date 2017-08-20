@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//type is String value is "Scooter the turtle"
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+//Type is optional string, value nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//optional string and nil
 
 
 
@@ -63,7 +63,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+//can assign strings and it is sitll and optional string?
+thirdPetName = "Thomas"
 
 
 
@@ -76,7 +77,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
+//optional brackets around name
 
 
 
@@ -89,7 +91,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +105,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name:String?){
+    if let name = name {
+        print(name)
+    }else{
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,8 +123,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
-
+printPetName(name: thirdPetName)
+printPetName(name: nil)
 
 
 
@@ -124,10 +134,19 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func minimum(list:[Int]) -> Int {
+    var lowest:Int = list[0]
+    let rest = list.dropFirst()
+    for n in rest {
+        if n < lowest{
+            lowest = n
+        }
+    }
+    return lowest
+}
 
 
-
-
+minimum(list: [10,4,6,4,6,99])
 
 
 
@@ -136,7 +155,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(list: values1)
 
 
 
@@ -150,7 +169,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(list: values2)
 
 
 
@@ -162,7 +181,20 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(list:[Int]) -> Int?{
+    if list.isEmpty{
+        return nil
+    }else{
+        var lowest:Int = list[0]
+        let rest = list.dropFirst()
+        for n in rest {
+            if n < lowest{
+                lowest = n
+            }
+        }
+        return lowest
+    }
+}
 
 
 
@@ -175,7 +207,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values1)
 
 
 
@@ -186,7 +218,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(list: values2)
 
 
 
