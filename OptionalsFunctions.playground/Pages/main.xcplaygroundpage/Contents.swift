@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//petName is a string
 
 
 
@@ -29,14 +29,14 @@ var otherPetName: String?
 
 
 
-
+//otherPetName is a string optional
 
 
 
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//it is nil
 
 
 
@@ -53,7 +53,7 @@ var thirdPetName: String? = nil
 
 
 
-
+//thirdPetName is of type string optional and the value is nil
 
 
 
@@ -62,6 +62,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Tink"
+
+//type is still string optional, but you can assign it string values
 
 
 
@@ -77,7 +80,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +92,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName{
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +106,14 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name: String?) {
+    if let petName = name{
+        print(petName)
+    }
+    else{
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,10 +125,9 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+printPetName(name: thirdPetName)
 
-
-
-
+printPetName(name: otherPetName)
 
 
 /*: question10
@@ -125,7 +136,20 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(list: [Int]) -> Int {
+    
+    var x: Int
+    x = list[0]
+    
+    
+    for int in list {
+        if int < x {
+            x = int
+        }
+    }
+    
+    return x
+}
 
 
 
@@ -139,7 +163,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
-
+minimum(list: values1)
 
 
 
@@ -152,9 +176,9 @@ let values2: [Int] = []
 
 
 
+//minimum(list: values2)
 
-
-
+//prints indexOutOfRange in console
 
 
 /*: question13
@@ -163,6 +187,23 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum(list: [Int]) -> Int? {
+    
+    if list.isEmpty{
+        return nil
+    }
+    else{
+        var x = list[0]
+        
+        for int in list{
+            if int < x{
+                x = int
+            }
+        }
+        return x
+    }
+    
+}
 
 
 
@@ -175,6 +216,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(list: values1)
 
 
 
@@ -188,7 +230,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(list: [])
 
 
 
