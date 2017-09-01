@@ -14,11 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
-
-
-
-
+//petName is a "String" type variable with a value "Scooter the Turtle 🐢"//
 
 
 
@@ -27,6 +23,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
+//otherPetName is an Optional String type variable//
 
 
 
@@ -36,7 +33,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//Current Value of otherPetName is nil//
 
 
 
@@ -47,11 +44,11 @@ var otherPetName: String?
 /*: question4
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
-var thirdPetName: String? = nil
+var thirdPetName: String?
 
 
 
-
+//thirdPetName is of Optional String Type variable with a nill value assigned//
 
 
 
@@ -62,6 +59,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+//Can assign a "String" value to thirdPetName after assigning the value thirdPetName will still be Optional String type variable
+
+thirdPetName = "Finding Dori"
 
 
 
@@ -76,6 +76,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+// Expected Value : Optional("Finding Dori")
+
+print(thirdPetName)
 
 
 
@@ -88,11 +91,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 /*: question8
@@ -101,10 +102,21 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func printPetName(petName1: String?) -> String {
 
+    var newPetName = petName1
+    if petName1 != nil {
+        print(petName1)
+    } else {
+        newPetName = "There is no pet Name!"
+    }
+    return newPetName!
+    
+}
 
+printPetName(petName1: "Chinni")
 
-
+printPetName(petName1: nil)
 
 
 /*: question9
@@ -112,8 +124,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petName1: thirdPetName)
 
-
+printPetName(petName1: otherPetName)
 
 
 
@@ -125,9 +138,16 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
+func minimum(items: [Int]) -> Int {
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -137,6 +157,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+minimum(values1)
 
 
 
@@ -150,6 +171,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+minimum(values2)
 
 
 
@@ -163,7 +185,20 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(items: [Int]) -> Int? {
+    if items.isEmpty {
+        return nil
+    }
+    
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -175,7 +210,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values1)
 
 
 
@@ -188,7 +223,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(values2)
 
 
 
