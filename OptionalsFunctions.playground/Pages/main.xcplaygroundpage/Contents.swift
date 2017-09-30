@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+//String
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// Optionals String ; nil
 
 
 
@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//nil
 
 
 
@@ -52,7 +52,7 @@ var thirdPetName: String? = nil
 
 
 
-
+// Optionals String ; nil
 
 
 
@@ -64,10 +64,9 @@ var thirdPetName: String? = nil
 
 
 
+thirdPetName = "Hog"
 
-
-
-
+// Optionals String
 
 
 
@@ -77,7 +76,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print ("\(thirdPetName)")
 
 
 
@@ -89,7 +88,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print ("\(thirdPetName)")
+}
 
 
 
@@ -101,7 +102,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(pet:String?) {
+    if let pet = pet {
+        print ("\(pet)")
+    } else {
+        print ("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +119,7 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(pet:thirdPetName)
 
 
 
@@ -124,7 +131,15 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(_ iList:[Int]) -> Int {
+    var smallest = iList[0]
+    for anum in iList {
+        if anum < smallest {
+            smallest = anum
+        }
+    }
+    return smallest
+}
 
 
 
@@ -137,7 +152,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+print ("\(minimum(values1))")
 
 
 
@@ -151,7 +166,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+//print ("\(minimum(values2))")
 
 
 
@@ -163,7 +178,20 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(_ iList:[Int]) -> Int? {
+    var smallest:Int
+    if iList.count > 0 {
+    smallest = iList[0]
+    for anum in iList {
+        if anum < smallest {
+            smallest = anum
+        }
+    }
+        return smallest
+    } else {
+        return nil
+    }
+}
 
 
 
@@ -175,6 +203,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+print ("\(maybeMinimum(values1))")
 
 
 
@@ -187,7 +216,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+print ("\(maybeMinimum(values2))")
 
 
 
