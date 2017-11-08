@@ -14,6 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
+type(of: petName)
 
 
 
@@ -26,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
+type(of: otherPetName)
 
 
 
@@ -36,8 +37,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
-
+//nil
 
 
 
@@ -48,7 +48,8 @@ var otherPetName: String?
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
-
+type(of: thirdPetName)
+thirdPetName
 
 
 
@@ -62,6 +63,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "whatever String"
+type(of: thirdPetName)
 
 
 
@@ -75,7 +78,7 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
-
+print(thirdPetName)
 
 
 
@@ -87,9 +90,7 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
-
-
+print(thirdPetName!)
 
 
 
@@ -99,10 +100,14 @@ var thirdPetName: String? = nil
  ### 8. Write a function called `printPetName` that takes a pet's name as a parameter. It should print the pet's name if the pet name exists, or "There is no pet name!" if the pet's name does not exist.
  */
 // write your code here
-
-
-
-
+func printPetName(petName:String?){
+    if let petName = petName {
+        print(petName)
+    }
+    else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,8 +117,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +129,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum (listInt : [Int])->Int{
+    return listInt.min()!
+}
 
 
 
@@ -136,7 +143,7 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
+minimum(listInt: values1)
 
 
 
@@ -150,7 +157,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(listInt: values2) //error returned
 
 
 
@@ -162,7 +169,13 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum (listInt : [Int])->Int?{
+    if listInt.isEmpty {
+        return nil
+    } else {
+        return listInt.min()!
+    }
+}
 
 
 
@@ -175,7 +188,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(listInt: values1)
 
 
 
@@ -187,7 +200,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(listInt: values2)
 
 
 
