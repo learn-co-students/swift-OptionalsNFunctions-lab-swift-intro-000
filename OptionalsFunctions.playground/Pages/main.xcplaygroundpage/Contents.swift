@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+//string
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//optional, value is nil
 
 
 
@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+//optional, nil
 
 
 
@@ -62,7 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "penguin"
+//optional
 
 
 
@@ -77,7 +78,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print (thirdPetName)
 
 
 
@@ -125,7 +126,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum (_ numbers: [Int]) -> Int{
+    
+}
 
 
 
