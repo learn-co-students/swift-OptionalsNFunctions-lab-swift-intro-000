@@ -14,8 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
-
+// pet name is String and value is "Scooter the Turtle 🐢"
 
 
 
@@ -26,7 +25,7 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
+// it is an optional String and the value is nil
 
 
 
@@ -36,7 +35,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//the value is nil
 
 
 
@@ -49,7 +48,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+// it is an optional String and the value is nil
 
 
 
@@ -63,8 +62,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+thirdPetName = "Ernie"
+//thirdPetName is assigned a String value. It is on optional String type.
 
 
 
@@ -77,7 +76,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +87,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let animalName = thirdPetName {
+    print("\(animalName)")
+}
 
 
 
@@ -100,7 +101,14 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String?){
+    if let name = petName {
+        print(name)
+    }else{
+        print("There is no pet name!")
+    }
+}
+print(petName)
 
 
 
@@ -114,7 +122,8 @@ var thirdPetName: String? = nil
 
 
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +133,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(list: [Int])-> Int{
+    var min = list[0]
+    let rest = list.dropFirst()
+    for list in rest {
+        if list < min {
+            min = list
+        }
+    }
+    return min
+}
 
 
 
@@ -137,7 +155,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(list: values1)
 
 
 
@@ -151,7 +169,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+//minimum(list: values2)
 
 
 
@@ -162,7 +180,19 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    }
+    var min = list[0]
+    let rest = list.dropFirst()
+    for list in rest {
+        if list < min {
+            min = list
+        }
+    }
+    return min
+}
 
 
 
@@ -175,7 +205,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values1)
 
 
 
@@ -187,7 +217,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values2)
 
 
 
