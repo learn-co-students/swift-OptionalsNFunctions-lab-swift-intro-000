@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// petname is declared as type string. petNames value is Scooter the Turtle.
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// otherPetName is of type optional String. It's value is nil.
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// the current value of otherPetName is nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+// thirdPetName is of type optional string. it's value is nil
 
 
 
@@ -62,8 +62,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Wishbone"
 
-
+//thirdPetName can be assigned values of type string. it's of type optional string.
 
 
 
@@ -77,7 +78,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
+// i expect to be an optional in front of me
 
 
 
@@ -88,7 +90,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,6 +104,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func printPetName(petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,9 +123,10 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
-
-
+//i expect to see the pets name when the thirdpetname is entered and i expect to see the no pet name message when the otherpetname is entered into the function
 
 
 
@@ -126,7 +138,16 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum(list:[Int]) -> Int {
+    var min = list[0]
+    let remaining = list.dropFirst()
+    for item in remaining {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +159,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -161,7 +182,19 @@ let values2: [Int] = []
  ### 13. Write a new function, `maybeMinimum`. It should handle cases in which the array passed to it is empty. If the array is empty, `nil` should be returned; otherwise, the smallest `Int` in the array should be returned. What should the return type of `maybeMinimum` be? (Note: So far, you haven't seen anything other than optional `String`s. Do you expect other optional types, such as `Int`s, to be handled differently?)
  */
 // write your code here
-
+func maybeMinimum(list:[Int])-> Int? {
+    if list.isEmpty {
+        return nil
+    }
+        var min = list[0]
+        let remaining = list.dropFirst()
+        for item in remaining {
+            if item < min {
+                min = item
+            }
+        }
+        return min
+}
 
 
 
@@ -176,7 +209,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(list: values1)
 
 
 
@@ -186,7 +219,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(list: values2)
 
 
 
