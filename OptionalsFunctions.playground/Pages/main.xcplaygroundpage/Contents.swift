@@ -87,9 +87,11 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
+thirdPetName = "Paul"
 
-
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +103,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?) -> String? {
+    if let petName = petName {
+        return "The pet's name is \(petName)"
+    }else{
+        return "There is no pet name!"
+    }
+}
 
 
 
@@ -111,6 +119,10 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
+
+printPetName(petName: otherPetName)
+printPetName(petName: thirdPetName)
+
 
 
 
@@ -125,8 +137,26 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func minimum(numbers: [Int]) -> Int {
+    var min = numbers[0]
+    for number in numbers {
+        if number < min {
+            min = number
+        }
+    }
+    return number
+}
 
-
+func minimum(items: [Int]) -> Int {
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
