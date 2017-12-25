@@ -66,7 +66,7 @@ var thirdPetName: String? = nil
 
 
 
-
+thirdPetName = "Peter"
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +89,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print (thirdPetName)
+}
 
 
 
@@ -100,6 +102,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func printPetName(name: String?) {
+    if let name = name {
+         print(name)
+    } else {
+         print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,8 +122,9 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+printPetName(name: thirdPetName)
 
-
+printPetName(name: otherPetName)
 
 
 
@@ -125,7 +135,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    } else {
+        return list[0]
+    }
+}
 
 
 
@@ -138,7 +154,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -165,6 +181,13 @@ let values2: [Int] = []
 
 
 
+func minimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    } else {
+        return list[0]
+    }
+}
 
 
 
@@ -176,6 +199,13 @@ let values2: [Int] = []
 // write your code here
 
 
+func minimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    } else {
+        return list[0]
+    }
+}
 
 
 
@@ -189,6 +219,13 @@ let values2: [Int] = []
 
 
 
+func minimum(list: [Int]) -> Int? {
+    if list.isEmpty {
+        return nil
+    } else {
+        return list[0]
+    }
+}
 
 
 
