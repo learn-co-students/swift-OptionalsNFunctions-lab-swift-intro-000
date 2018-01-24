@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// String + "Scooter the Turtle"
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// It's a optional + nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+// optional + nil
 
 
 
@@ -63,9 +63,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Hello"
 
-
-
+// Still optional
 
 
 
@@ -76,7 +76,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
+// Not unwrapped yet, so shows optional in front of it
 
 
 
@@ -88,7 +90,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName{
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +104,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String) {
+    if petName.isEmpty{
+        print("There's no pet name")
+    } else{
+        print(petName)
+    }
+}
 
 
 
@@ -110,11 +120,8 @@ var thirdPetName: String? = nil
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
- // write your code here
-
-
-
-
+ // write your code her
+// doesn't work because it's an optionl still
 
 
 
@@ -124,7 +131,17 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(array: [Int]) -> Int{
+    var lowest = array[0]
+    
+    for number in array{
+        if number < lowest {
+            lowest = number
+        }
+    }
+    
+    return lowest
+}
 
 
 
@@ -139,6 +156,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 
 
 
+minimum(array: values1)
 
 
 
@@ -150,7 +168,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+// it won't work because there are no values in the array
 
 
 
@@ -162,9 +180,22 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
-
+func maybeMinimum(array: [Int]) -> Optional{
+    var lowest: Int?
+    if array.isEmpty{
+        return lowest
+    } else{
+        if let lowest = lowest{
+            lowest = array[0]
+        }
+        for number in array{
+            if number < lowest {
+                lowest = number
+            }
+        return lowest
+    }
+}
+}
 
 
 
@@ -176,7 +207,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+maybeMinimum(values1)
 
 
 
@@ -189,7 +220,7 @@ let values2: [Int] = []
 
 
 
-
+maybeMinimum(values2)
 
 
 
