@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// String type = Scooter the turtle 🐢
 
 
 
@@ -26,7 +26,7 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
+// type is optional String = nil
 
 
 
@@ -36,7 +36,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+otherPetName =  nil
 
 
 
@@ -48,7 +48,7 @@ var otherPetName: String?
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
-
+// optional string with nil value
 
 
 
@@ -62,7 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+thirdPetName = "Max"
+// type is still optional String
 
 
 
@@ -77,8 +78,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
+print(thirdPetName)
+// see optional
 
 
 
@@ -88,7 +89,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,6 +104,16 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func printPetName(petName:String?) {
+    if let petName = petName {
+        print("my pets name is \(petName)")
+    }
+    print("There is no pet name!")
+}
+var petNameInput:String? = nil
+petNameInput = "digger"
+
+printPetName(petName: petNameInput)
 
 
 
@@ -112,7 +125,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,19 +138,32 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+// return type is an Integer
+func minimum(listNum:[Int]) -> Int {
+    
+    var minNum = listNum[0]
+    for num in listNum {
+        if num < minNum {
+            minNum = num
+        }
+    }
+    
+    return minNum
+}
 
-
-
-
+let list = [2,22,1,0,-66,33,55,72,7,4,-1]
+minimum(listNum: list)
 
 
 
 /*: question11
  ### 11. Call your `minimum` function with the following array. What value do you expect to get back? What value did you get back?
  */
-let values1 = [4, 12, 3, 2, 9, 14, 11]
-// write your code here
 
+
+var values1 = [4, 12, 3, 2, 9, 14, 11]
+// write your code here
+minimum(listNum: values1)
 
 
 
@@ -150,7 +177,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+// minimum(listNum: values2) gives an error
 
 
 
@@ -162,21 +189,37 @@ let values2: [Int] = []
  */
 // write your code here
 
+func maybeMinimum(inputArray:[Int]) -> Int? {
+    
+    if inputArray.isEmpty {
+        return nil
+    } else {
+        var minimum = inputArray[0]
+        for numm in inputArray {
+            if numm < minimum {
+                minimum = numm
+            }
+        }
+        return minimum
+    }
+    
+}
 
+var inList = [2,3,44,55,-9,-88,77,101,5]
 
+maybeMinimum(inputArray: inList)
 
+inList = []
 
-
-
-
+maybeMinimum(inputArray: inList)
 
 /*: question14
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
 
-
-
+//values1 = [4, 12, 3, 2, 9, 14, 11]
+maybeMinimum(inputArray: values1)
 
 
 
@@ -187,7 +230,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(inputArray: values2)
 
 
 
