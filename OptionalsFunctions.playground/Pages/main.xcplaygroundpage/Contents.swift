@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// string
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// optional string, nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+// nil
 
 
 
@@ -49,7 +49,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+// optional String, nil
 
 
 
@@ -62,8 +62,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+thirdPetName = "Charlie"
+// optional String
 
 
 
@@ -76,7 +76,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdName = thirdPetName {
+    print(thirdName)
+}
 
 
 
@@ -100,7 +102,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(name: String?) {
+    if let petName = name {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,7 +120,7 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
+printPetName(name: thirdPetName)
 
 
 
@@ -124,7 +132,10 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(list: [Int]) -> Any {
+    var mini = list.min()
+    return mini
+}
 
 
 
@@ -137,7 +148,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(list: values1)
 
 
 
@@ -150,19 +161,17 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
-
-
-
-
-
+//minimum(list: values2)
 
 /*: question13
  ### 13. Write a new function, `maybeMinimum`. It should handle cases in which the array passed to it is empty. If the array is empty, `nil` should be returned; otherwise, the smallest `Int` in the array should be returned. What should the return type of `maybeMinimum` be? (Note: So far, you haven't seen anything other than optional `String`s. Do you expect other optional types, such as `Int`s, to be handled differently?)
  */
 // write your code here
 
-
+func maybeMinimum(list: [Int]?) -> Any {
+    let mini = list?.min()
+    return mini
+}
 
 
 
@@ -174,7 +183,7 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
-
+maybeMinimum(list: values1)
 
 
 
@@ -187,7 +196,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(list: values2)
 
 
 
