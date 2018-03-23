@@ -17,7 +17,7 @@ var petName = "Scooter the Turtle 🐢"
 
 
 
-
+//Type inference of String with value "Scooter the Turtle 🐢"
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//optional and its value is nil
 
 
 
@@ -38,7 +38,7 @@ var otherPetName: String?
  */
 
 
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+//optional initialized to nil
 
 
 
@@ -64,8 +64,8 @@ var thirdPetName: String? = nil
 
 
 
-
-
+thirdPetName = "Lonely"
+//any type of value, after assigning it value, it is still optional
 
 
 
@@ -76,8 +76,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+//expect to see optional(value)
+print(thirdPetName)
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let name = thirdPetName {
+    print(name)
+}
 
 
 
@@ -100,7 +102,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petName: String) {
+    if petName.count == 0 {
+        print(petName)
+    } else {
+        print("No name or/and life")
+    }
+}
 
 
 
@@ -112,8 +120,9 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
-
-
+//printPetName(petName: thirdPetName)
+//printPetName(petName: otherPetName)
+// both says need to wrap because it is optional
 
 
 
@@ -123,12 +132,16 @@ var thirdPetName: String? = nil
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
+func minimum (num: [Int]) -> Int {
+    var min = num[0]
+    for number in num{
+        if (number < min) {
+            min = number
+        }
+    }
+    return min
 
-
-
-
-
-
+}
 
 
 /*: question11
@@ -137,11 +150,11 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+//return smallest value in the array
 
+print(minimum(num: values1))
 
-
-
-
+//4
 
 
 /*: question12
@@ -150,8 +163,8 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
-
+//print(minimum(num: values2))
+//fatal error index out of range
 
 
 
@@ -162,21 +175,29 @@ let values2: [Int] = []
  */
 // write your code here
 
+func maybeMinimum (num: [Int]) -> Int? {
 
+    if num.isEmpty {
+        return nil
+    }else {
+        var min = num[0]
+        for number in num{
+            if (number < min) {
+                min = number
+            }
+        }
+        return min
+    }
 
-
-
-
-
-
-
+}
+//i think it would be handled similarity
 /*: question14
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
 
-
-
+// smallest value
+maybeMinimum(num: values1)
 
 
 
@@ -187,8 +208,8 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
+//nil
+maybeMinimum(num: values2)
 
 
 
