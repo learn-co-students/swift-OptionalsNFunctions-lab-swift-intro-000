@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+// string -- scooter etc
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// optional string - nil
 
 
 
@@ -39,7 +39,7 @@ var otherPetName: String?
 
 
 
-
+//nil
 
 
 
@@ -52,7 +52,7 @@ var thirdPetName: String? = nil
 
 
 
-
+//nil
 
 
 
@@ -63,7 +63,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+thirdPetName = "Bob"
+// optional bob
 
 
 
@@ -76,7 +77,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +90,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -100,7 +103,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(petsName: String?) {
+    if let petsName = petsName {
+        print(petsName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,6 +121,8 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petsName: "Pupper")
+printPetName(petsName: nil)
 
 
 
@@ -125,7 +136,10 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func minimum(number: [Int]) -> Int? {
+    let smallNumber = number.min()
+    return smallNumber
+}
 
 
 
@@ -137,7 +151,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(number: values1)
 
 
 
@@ -150,6 +164,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+minimum(number: values2)
 
 
 
@@ -163,7 +178,20 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(number: [Int]) -> Int? {
+    if number.isEmpty {
+        return nil
+    } else {
+        var min = number[0]
+        let rest = number.dropFirst()
+        for number in rest {
+            if number < min {
+                min = number
+            }
+        }
+        return min
+    }
+}
 
 
 
@@ -175,7 +203,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(number: values1)
 
 
 
@@ -187,6 +215,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(number: values2)
 
 
 
