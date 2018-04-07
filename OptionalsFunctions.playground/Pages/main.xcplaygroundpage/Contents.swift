@@ -17,7 +17,7 @@ var petName = "Scooter the Turtle 🐢"
 
 
 
-
+//String, "Scooter the Turtle"
 
 
 
@@ -29,7 +29,7 @@ var otherPetName: String?
 
 
 
-
+//Type: Optional, value: nil
 
 
 
@@ -39,7 +39,7 @@ var otherPetName: String?
 
 
 
-
+//nil
 
 
 
@@ -52,7 +52,7 @@ var thirdPetName: String? = nil
 
 
 
-
+//Optional //value nil
 
 
 
@@ -65,7 +65,9 @@ var thirdPetName: String? = nil
 
 
 
+thirdPetName = "Olivia"
 
+//still optional
 
 
 
@@ -77,7 +79,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +91,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +105,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(petName: String?) {
+    if let petName = petName{
+        print(petName)
+    } else{
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -115,7 +125,8 @@ var thirdPetName: String? = nil
 
 
 
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 
@@ -124,7 +135,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(numbers: [Int]) -> Int? {
+    return numbers.min()
+}
 
 
 
@@ -138,7 +151,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+print(minimum(numbers: values1))
 
 
 
@@ -152,7 +165,7 @@ let values2: [Int] = []
 
 
 
-
+print(minimum(numbers: values2))
 
 
 
@@ -165,7 +178,14 @@ let values2: [Int] = []
 
 
 
-
+func maybeMinimum(numbas: [Int]?) -> Int? {
+    if let numbas = numbas {
+        return numbas.min()
+    } else{
+        return nil
+    }
+    
+}
 
 
 
@@ -179,7 +199,7 @@ let values2: [Int] = []
 
 
 
-
+print(maybeMinimum(numbas: values1))
 
 
 /*: question15
@@ -189,7 +209,7 @@ let values2: [Int] = []
 
 
 
-
+print(maybeMinimum(numbas: values2))
 
 
 
