@@ -14,55 +14,31 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
-
-
-
-
-
-
+    print("String and it's value is \(petName)")
 
 /*: question2
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
-
-
-
-
-
-
+ print("optional string and it's value is nil")
 
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
-
-
-
-
-
-
+print(otherPetName)
 
 /*: question4
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
-
-
-
-
-
-
-
-
-
+    print("optional string and it's value is nil")
+    print(thirdPetName)
 /*: question5
  ### 5. Assign a value to `thirdPetName`. What type of values can you assign to `thirdPetName`? After assigning a value, what is its type?
  */
 // write your code here
-
-
+thirdPetName = "Molle"
+print("Optional string, string, optional string")
 
 
 
@@ -76,43 +52,42 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
-
+print(thirdPetName)
 
 /*: question7
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
-
-
-
-
-
-
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 /*: question8
  ### 8. Write a function called `printPetName` that takes a pet's name as a parameter. It should print the pet's name if the pet name exists, or "There is no pet name!" if the pet's name does not exist.
  */
 // write your code here
 
+func printPetName(petName: String?){
+    if let petName = petName{
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+    
+}
 
-
-
-
-
-
+printPetName(petName: nil)
+printPetName(petName: "Molle")
 
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
 
-
+printPetName(petName: thirdPetName)
+//name of pet
+printPetName(petName: otherPetName)
+// there is no petnama
 
 
 
@@ -123,13 +98,25 @@ var thirdPetName: String? = nil
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
+func minimun(minList: [Int]) -> Int{
+    var minInt :Int?
+    
+    
+    for minList in minList{
+        if minInt != nil {
+            if minList < minInt! {
+                minInt = minList
+            }
+        } else {
+            minInt = minList
+        }
+        
+    }
+    
+    return minInt!
+}
 
-
-
-
-
-
-
+ print(minimun(minList: [7,2,3,4]))
 
 /*: question11
  ### 11. Call your `minimum` function with the following array. What value do you expect to get back? What value did you get back?
@@ -137,7 +124,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+print(minimun(minList: values1))
 
 
 
@@ -150,8 +137,8 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
-
+// print(minimun(minList: values2))
+// fatal error
 
 
 
@@ -161,7 +148,25 @@ let values2: [Int] = []
  ### 13. Write a new function, `maybeMinimum`. It should handle cases in which the array passed to it is empty. If the array is empty, `nil` should be returned; otherwise, the smallest `Int` in the array should be returned. What should the return type of `maybeMinimum` be? (Note: So far, you haven't seen anything other than optional `String`s. Do you expect other optional types, such as `Int`s, to be handled differently?)
  */
 // write your code here
-
+func maybeMinimum(minList: [Int]) -> Int?{
+    
+    var minInt :Int?
+    if minList.isEmpty {
+        return nil
+        }else{
+        for minList in minList{
+            if minInt != nil {
+                if minList < minInt! {
+                    minInt = minList
+                }
+            } else {
+                minInt = minList
+            }
+        }
+    }
+    
+    return minInt!
+}
 
 
 
@@ -175,7 +180,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+print(maybeMinimum(minList: values1))
 
 
 
@@ -186,7 +191,7 @@ let values2: [Int] = []
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
 // write your code here
-
+print(maybeMinimum(minList: values2))
 
 
 
