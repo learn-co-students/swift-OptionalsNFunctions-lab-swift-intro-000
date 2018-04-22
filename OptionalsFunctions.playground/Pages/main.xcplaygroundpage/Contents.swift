@@ -16,7 +16,9 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+/*
+ String, with value "Scooter the Turtle"
+ */
 
 
 
@@ -28,7 +30,9 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+/*
+ Optional String, with value of nil
+ */
 
 
 
@@ -36,8 +40,9 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
-
+/*
+nil
+*/
 
 
 
@@ -50,7 +55,9 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+/*
+Optional String, with value nil
+*/
 
 
 
@@ -63,7 +70,12 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Hoppy"
+print(thirdPetName)
 
+/*
+ You can assign String values to thirdPetName. Even after assigning it a String value, it's type is still Optional String.
+ */
 
 
 
@@ -76,11 +88,12 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
 
-
-
-
+/*
+ Optional("Hoppy")
+*/
 
 
 /*: question7
@@ -89,7 +102,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName {
+ print(thirdPetName)
+ }
 
 
 
@@ -100,7 +115,14 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func printPetName(name: String?) {
+    if let name = name {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+  
+}
 
 
 
@@ -113,18 +135,29 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+print(thirdPetName)
+print(otherPetName)
 
-
-
-
-
+/*
+ "Hoppy"
+ "There is no pet name!"
+*/
 
 /*: question10
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
 // write your code here
 
-
+func minimum(ints: [Int]) -> Int {
+    var min = ints[0]
+    let others = ints.dropFirst()
+    for int in others {
+        if int < min {
+            min = int
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +171,10 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(values1)
+/*
+ 2
+ */
 
 
 
@@ -151,8 +187,10 @@ let values2: [Int] = []
 // write your code here
 
 
-
-
+minimum(values2)
+/*
+ You'll get an index out of bounds error.
+ */
 
 
 
@@ -163,10 +201,26 @@ let values2: [Int] = []
 // write your code here
 
 
+func maybeMinimum(ints: [Int]) -> Int? {
+    if ints.isEmpty {
+        return nil
+    }
+    
+    var min  = ints[0]
+    let others = ints.dropFirst()
+    for int in others {
+        if int < min {
+            min = int
+        }
+    }
+    
+    return min
+}
 
 
-
-
+/*
+ Optional Int 
+ */
 
 
 
@@ -176,10 +230,11 @@ let values2: [Int] = []
 // write your code here
 
 
+maybeMinimum(ints: values1)
 
-
-
-
+/*
+ Optional(2)
+*/
 
 
 /*: question15
@@ -188,9 +243,11 @@ let values2: [Int] = []
 // write your code here
 
 
+maybeMinimum(ints: values2)
 
-
-
+/*
+ nil
+ */
 
 
 
