@@ -15,7 +15,7 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+// string
 
 
 
@@ -28,7 +28,8 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+// Optional String
+// nil
 
 
 
@@ -38,7 +39,7 @@ var otherPetName: String?
  */
 
 
-
+// nil
 
 
 
@@ -50,8 +51,8 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
-
+// Optional String
+// nil
 
 
 
@@ -62,8 +63,8 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+thirdPetName = "ramen"
+// optional string
 
 
 
@@ -78,7 +79,7 @@ var thirdPetName: String? = nil
 
 
 
-
+print(thirdPetName)
 
 
 
@@ -90,7 +91,9 @@ var thirdPetName: String? = nil
 
 
 
-
+if let optional = thirdPetName {
+    print("\(optional)")
+}
 
 
 
@@ -101,7 +104,14 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName (petName: String?) {
+    if let optional = petName {
+        print("\(optional)")
+    }
+    else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,21 +123,25 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+printPetName(petName: thirdPetName)
 
-
-
+printPetName(petName: otherPetName)
 
 
 
 /*: question10
  ### 10. Write a function called `minimum`. `minimum` should take a list of `Int`s and return the minimum one in the bunch. For now, don't deal with the possibility of an empty array; assume the array passed to `minimum` always has one item. What should the return type of `minimum` be?
  */
-// write your code here
-
-
-
-
-
+func minimum (list: [Int])->Int{
+    var min = list[0]
+    let others = list.dropFirst()
+    for items in others {
+        if min > items {
+            min = items
+        }
+    }
+    return min
+}
 
 
 
@@ -138,7 +152,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
 
-
+minimum(list: values1)
 
 
 
@@ -151,7 +165,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+// minimum(list: values2)
 
 
 
@@ -162,7 +176,21 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(digits: [Int?]) -> Int? {
+    if digits.isEmpty {
+        return nil
+    }
+    
+        var maybeMin = digits[0]
+        let other = digits.dropFirst()
+        for remainders in other {
+            if maybeMin > remainders {
+                maybeMin = remainders
+            }
+        }
+        return maybeMin
+    
+}
 
 
 
@@ -173,7 +201,7 @@ let values2: [Int] = []
 /*: question14
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
-// write your code here
+maybeMinimum(digits: values1)
 
 
 
@@ -185,7 +213,7 @@ let values2: [Int] = []
 /*: question15
  ### 15. Call `maybeMinum` with `values2`, an empty array. What do you expect the return value to be?
  */
-// write your code here
+maybeMinimum(digits: values2)
 
 
 
