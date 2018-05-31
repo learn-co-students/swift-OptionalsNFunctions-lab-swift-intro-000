@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// The type of the variable is a String. "Scooter the turtle 🐢" is the value.
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+// The type of the variable is an optional string. The value of this string is nil.
 
 
 
@@ -36,7 +36,8 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+//nil
+// Nothing.
 
 
 
@@ -49,7 +50,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
+//The type of the thirdPetName variable is of type optional string. current value of this variable is nil.
 
 
 
@@ -62,9 +63,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Luther"
 
-
-
+//After assigning the value, thirdPetName is still an optional string until I unwrap it.
 
 
 
@@ -75,9 +76,9 @@ var thirdPetName: String? = nil
  ### 6. Print `thirdPetName` to the console using Swift's `print()` function. What do you expect to see in the console?
  */
 // write your code here
+print (thirdPetName!)
 
-
-
+//Optioanl(Luther)
 
 
 
@@ -88,8 +89,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+if let thirdPetName = thirdPetName {
+print (thirdPetName)
+}
 
 
 
@@ -100,19 +102,20 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
-
+func printpetName(petname: String?) {
+    
+    if (petname?.isEmpty)! {
+        print ("There is no pet name!")
+    }else if let petname = petname {
+        print (petname)
+    }
+    }
 
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
-
-
+printpetName(petname: thirdPetName)
 
 
 
@@ -124,6 +127,11 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func minimum(numbers: [Int] )-> Int {
+    let numNum = numbers
+    
+    return numNum.min()!
+}
 
 
 
@@ -137,7 +145,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+minimum(numbers: values1)
 
 
 
@@ -150,7 +158,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//Fatal Error, unexpectedly found nil while unrwrapping optional value.
 
 
 
@@ -162,7 +170,14 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+func maybeMinimum(values: [Int] )-> Int? {
+    if values.isEmpty {
+        return nil
+    }else{
+        print (values.min()!)
+    }
+    return values.min()
+}
 
 
 
@@ -175,7 +190,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values: values1)
 
 
 
@@ -187,7 +202,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(values: values2)
 
 
 
@@ -195,3 +210,4 @@ let values2: [Int] = []
 
 
 //: Click [here](https://github.com/learn-co-curriculum/swift-OptionalsNFunctions-lab/blob/solution/OptionalsFunctions.playground/Pages/solution.xcplaygroundpage/Contents.swift) to see the solution on GitHub.
+
