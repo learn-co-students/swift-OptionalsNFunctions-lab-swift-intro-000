@@ -14,7 +14,7 @@
  ### 1. What is the type of the variable `petName` declared below? What is its value?
  */
 var petName = "Scooter the Turtle 🐢"
-
+// type is a string of value "Scooter the Turtle"
 
 
 
@@ -26,6 +26,8 @@ var petName = "Scooter the Turtle 🐢"
  ### 2. What is the type of the variable `otherPetName` declared below? What is its value?
  */
 var otherPetName: String?
+// type is an Optional of value nil
+print(otherPetName)
 
 
 
@@ -36,7 +38,7 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
+// current value of otherPetName is nil
 
 
 
@@ -48,7 +50,7 @@ var otherPetName: String?
  ### 4. What is the type of the variable `thirdPetName` declared below? What is its value?
  */
 var thirdPetName: String? = nil
-
+// type of thirdPetName ia an optional of value nil
 
 
 
@@ -61,6 +63,9 @@ var thirdPetName: String? = nil
  ### 5. Assign a value to `thirdPetName`. What type of values can you assign to `thirdPetName`? After assigning a value, what is its type?
  */
 // write your code here
+thirdPetName = "Fido"
+print(thirdPetName)
+print(type(of: thirdPetName))
 
 
 
@@ -76,7 +81,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+// as per above, when printing an option I expect the wrapper
 
 
 
@@ -87,6 +92,12 @@ var thirdPetName: String? = nil
  ### 7. Write an if statement that will print _just_ the value of `thirdPetName` to the console, without all the **Optional(...)** stuff.
  */
 // write your code here
+
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+} else {
+    print("there is no value for third pet name")
+}
 
 
 
@@ -100,6 +111,24 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+//func printPetName(petName: String?) -> (String) {
+//    let toPrint: String
+//    if let petName = petName {
+//        toPrint = petName
+//    } else {
+//        toPrint = "There is no pet name!"
+//    }
+//    print(toPrint)
+//    return toPrint
+//}
+
+func printPetName(petName: String?) {
+    if let petName = petName {
+        print(petName)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -111,6 +140,11 @@ var thirdPetName: String? = nil
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
+
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
+let fourthPetName = "Erin testing"
+printPetName(petName: fourthPetName)
 
 
 
@@ -124,7 +158,19 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(listInts: [Int]) -> Int {
+    
+    var lowestNum = listInts[0]
+    
+    for nums in listInts {
+        
+        if nums < lowestNum {
+            lowestNum = nums
+        }
+        
+    }
+    return lowestNum
+}
 
 
 
@@ -137,6 +183,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+minimum(listInts: values1)
 
 
 
@@ -150,6 +197,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
+//minimum(listInts: values2)
 
 
 
@@ -163,7 +211,22 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum(listInts: [Int]) -> Int? {
+    
+    var lowestNum: Int?
+    
+    if listInts.isEmpty {
+        lowestNum = nil
+    } else {
+        lowestNum = listInts[0]
+        for nums in listInts {
+            if nums < lowestNum! {
+                lowestNum = nums
+            }
+        }
+    }
+    return lowestNum
+}
 
 
 
@@ -174,6 +237,9 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
+
+
+maybeMinimum(listInts: values1)
 
 
 
@@ -187,6 +253,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(listInts: values2)
 
 
 
