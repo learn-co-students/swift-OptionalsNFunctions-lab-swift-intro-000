@@ -15,7 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
+//'petName' variabile is of type String
+// its value is "Scooter the Turtle 🐢" String
 
 
 
@@ -27,7 +28,8 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//'otherPetName' variabile is of type String? - optional
+// its value is nil
 
 
 
@@ -36,9 +38,9 @@ var otherPetName: String?
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
+print(otherPetName)
 
-
-
+// variable current value is nil
 
 
 
@@ -49,9 +51,9 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
+print(thirdPetName)
 
-
-
+// variable 'thirdPetName' is optional String having a nil value
 
 
 
@@ -62,8 +64,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Scooter"
 
-
+//you can assign String values. Its type is still optional String
 
 
 
@@ -76,10 +79,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
-
-
-
+//I expected to see and Optional("Scooter") result
 
 
 
@@ -88,9 +90,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
+if let name = thirdPetName {
+    print(name)
+}
 
 
 
@@ -100,8 +102,13 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -112,9 +119,10 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
-
-
+// Seeing the 'thirdPetName' value "Scooter" first and then "There is no pet name!"
 
 
 
@@ -124,7 +132,16 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(pieces: [Int]) -> Int {
+    var min = pieces[0]
+    let others = pieces.dropFirst()
+    for piece in others {
+        if piece < min {
+            min = piece
+        }
+    }
+    return min
+}
 
 
 
@@ -137,9 +154,9 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+minimum(pieces: values1)
 
-
-
+//value 2
 
 
 
@@ -151,9 +168,9 @@ let values2: [Int] = []
 // write your code here
 
 
+//minimum(pieces: values2)
 
-
-
+//values2 is having an empty array so that i get an error - index out of bounds
 
 
 
@@ -162,12 +179,21 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
-
-
-
-
+func maybeMinimum(pieces: [Int]) -> Int? {
+    if pieces.isEmpty {
+        return nil
+    }
+    
+    var min = pieces[0]
+    let others = pieces.dropFirst()
+    for piece in others {
+        if piece < min {
+            min = piece
+        }
+    }
+    return min
+    
+}
 
 
 /*: question14
@@ -175,7 +201,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(pieces: values1)
 
 
 
@@ -187,10 +213,10 @@ let values2: [Int] = []
  */
 // write your code here
 
+maybeMinimum(pieces: values2)
 
 
-
-
+//nil. Within the function a condition was made in this way, so that whenever we have an empty array it will return nil value
 
 
 
