@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+//string and "Scooter the Turtle"
 
 
 
@@ -27,7 +27,7 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
+//optional string value: nil
 
 
 
@@ -37,7 +37,7 @@ var otherPetName: String?
  ### 3. What is the _current value_ of `otherPetName`?
  */
 
-
+//nil
 
 
 
@@ -50,7 +50,7 @@ var otherPetName: String?
 var thirdPetName: String? = nil
 
 
-
+//optioal string and nil
 
 
 
@@ -62,7 +62,10 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+thirdPetName = "Nahar"
 
+//strings
+//optional string
 
 
 
@@ -77,7 +80,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+print (thirdPetName)
 
+//the value with optional before it
 
 
 
@@ -89,7 +94,10 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+if let value = thirdPetName {
+    print (value)
 
+}
 
 
 
@@ -101,7 +109,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName (petName: String?){
+    if let petName = petName {
+        print ("\(petName)")
+    } else {
+        print ("There is no pet name!")
+    }
+}
 
 
 
@@ -112,6 +126,10 @@ var thirdPetName: String? = nil
  */
  // write your code here
 
+
+printPetName(petName: thirdPetName)
+
+printPetName(petName: otherPetName)
 
 
 
@@ -126,7 +144,13 @@ var thirdPetName: String? = nil
 
 
 
-
+func minimum (list: [Int]) -> Int{
+    var y = list[0]
+    if let min = list.min(){
+        y = min
+    }
+    return (y)
+}
 
 
 
@@ -137,7 +161,9 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+print(minimum(list: values1))
 
+//i got 2 and i expected 2
 
 
 
@@ -151,6 +177,9 @@ let values2: [Int] = []
 // write your code here
 
 
+//print(minimum(list: values2))
+
+//i got and error
 
 
 
@@ -163,7 +192,9 @@ let values2: [Int] = []
 // write your code here
 
 
-
+func maybeMinimum (list: [Int]) -> Int?{
+    return (list.min())
+}
 
 
 
@@ -175,6 +206,7 @@ let values2: [Int] = []
  */
 // write your code here
 
+print(maybeMinimum(list: values1))
 
 
 
@@ -188,7 +220,7 @@ let values2: [Int] = []
 // write your code here
 
 
-
+print(maybeMinimum(list: values2))
 
 
 
