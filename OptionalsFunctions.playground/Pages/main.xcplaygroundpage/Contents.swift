@@ -32,7 +32,6 @@ var otherPetName: String?
 
 
 
-
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
@@ -64,7 +63,7 @@ var thirdPetName: String? = nil
 
 
 
-
+thirdPetName = "Spot"
 
 
 
@@ -77,7 +76,7 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+print(thirdPetName)
 
 
 
@@ -89,7 +88,9 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+if let thirdPetName = thirdPetName{
+    print(thirdPetName)
+}
 
 
 
@@ -101,7 +102,13 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
+func printPetName(name: String?) {
+    if let name = name {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 
 
@@ -113,9 +120,9 @@ var thirdPetName: String? = nil
  // write your code here
 
 
+printPetName(name: thirdPetName)
 
-
-
+printPetName(name: otherPetName)
 
 
 
@@ -125,6 +132,15 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+func minimum(numList: [Int]) -> Int {
+    var tracker = numList[0]
+    for i in numList {
+        if i < tracker {
+            tracker = i
+        }
+    }
+    return tracker
+}
 
 
 
@@ -136,8 +152,8 @@ var thirdPetName: String? = nil
  */
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
-
-
+var min = minimum(numList: values1)
+print(min)
 
 
 
@@ -150,7 +166,7 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
+//minimum(numList: values2)
 
 
 
@@ -164,7 +180,26 @@ let values2: [Int] = []
 
 
 
-
+func maybeMinimum(numList: [Int]) -> Int? {
+    
+    if numList.isEmpty {
+        return nil
+    }
+    
+    else
+        {
+            var tracker = numList[0]
+            for i in numList {
+                if i < tracker {
+                    tracker = i
+                                }
+        
+            }
+            return tracker
+           
+    }
+    
+}
 
 
 
@@ -174,6 +209,10 @@ let values2: [Int] = []
  ### 14. Call `maybeMinum` with `values1`. What do you expect the return value to be?
  */
 // write your code here
+
+if let lowest = maybeMinimum(numList: values1) {
+    print(lowest)
+}
 
 
 
@@ -187,7 +226,11 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+if let min = maybeMinimum(numList: values2) {
+    print(min)
+} else {
+    print("Your list is empty!")
+}
 
 
 
