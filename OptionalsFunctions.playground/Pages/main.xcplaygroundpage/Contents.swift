@@ -16,7 +16,7 @@
 var petName = "Scooter the Turtle 🐢"
 
 
-
+/*Type = String value = "Scooter the Turtle 🐢"*/
 
 
 
@@ -28,7 +28,7 @@ var petName = "Scooter the Turtle 🐢"
 var otherPetName: String?
 
 
-
+/*Type = optional String? value = nil*/
 
 
 
@@ -40,7 +40,7 @@ var otherPetName: String?
 
 
 
-
+/*value = nil*/
 
 
 
@@ -51,7 +51,7 @@ var thirdPetName: String? = nil
 
 
 
-
+/*Type = optional String? value = nil*/
 
 
 
@@ -63,11 +63,11 @@ var thirdPetName: String? = nil
 // write your code here
 
 
+thirdPetName = "Grizzly"
 
+thirdPetName
 
-
-
-
+/*you can assign a type string.  after assigning it is still an optional String?*/
 
 
 
@@ -76,9 +76,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+print(thirdPetName)
 
-
-
+/*Optional(Grizzly)*/
 
 
 
@@ -88,7 +88,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 
@@ -101,22 +103,24 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
-
-
+func printPetName(petName: String?) {
+    if let name = petName {
+        print(name)
+    } else {
+        print("There is no pet name!")
+    }
+}
 
 /*: question9
  ### 9. Call `printPetName` with `thirdPetName`. Then call it again with `otherPetName`. What do you expect to see in the console?
  */
  // write your code here
 
+printPetName(petName: thirdPetName)
 
+printPetName(petName: otherPetName)
 
-
-
-
+/*Grizzly then There is no pet name*/
 
 
 /*: question10
@@ -124,7 +128,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+func minimum(numbers: [Int])-> Int {
+    return numbers[0]
+}
 
 
 
@@ -137,9 +143,11 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
+/* I expect to get back 4*/
 
+minimum(numbers: values1)
 
-
+/* I got back 4*/
 
 
 
@@ -151,10 +159,10 @@ let values2: [Int] = []
 // write your code here
 
 
+//minimum(numbers: values2)
 
 
-
-
+/* I got error message because there is not value at minimum[0]*/
 
 
 /*: question13
@@ -164,7 +172,19 @@ let values2: [Int] = []
 
 
 
-
+func maybeMinimum(items: [Int]) -> Int? {
+    if items.isEmpty {
+        return nil
+    }
+    var min = items[0]
+    let rest = items.dropFirst()
+    for item in rest {
+        if item < min {
+            min = item
+        }
+    }
+    return min
+}
 
 
 
@@ -175,9 +195,9 @@ let values2: [Int] = []
  */
 // write your code here
 
+/*2*/
 
-
-
+maybeMinimum(items: values1)
 
 
 
@@ -187,9 +207,11 @@ let values2: [Int] = []
  */
 // write your code here
 
+/*nil*/
 
 
 
+maybeMinimum(items: values2)
 
 
 
