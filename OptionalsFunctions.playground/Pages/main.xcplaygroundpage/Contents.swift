@@ -15,11 +15,8 @@
  */
 var petName = "Scooter the Turtle 🐢"
 
-
-
-
-
-
+// petName is a String
+// petName has a value of "Scooter the Turtle"
 
 
 /*: question2
@@ -27,20 +24,13 @@ var petName = "Scooter the Turtle 🐢"
  */
 var otherPetName: String?
 
-
-
-
-
-
+// otherPetName is an Optional
+// otherPetName is nil
 
 /*: question3
  ### 3. What is the _current value_ of `otherPetName`?
  */
-
-
-
-
-
+// nil
 
 
 
@@ -49,12 +39,7 @@ var otherPetName: String?
  */
 var thirdPetName: String? = nil
 
-
-
-
-
-
-
+//nil
 
 
 /*: question5
@@ -63,12 +48,8 @@ var thirdPetName: String? = nil
 // write your code here
 
 
-
-
-
-
-
-
+thirdPetName = "Amelia"
+print(thirdPetName!)
 
 
 /*: question6
@@ -76,7 +57,7 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
+//I expect to see the optional word displayed with the name
 
 
 
@@ -88,11 +69,9 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
+if let thirdPetName = thirdPetName {
+    print(thirdPetName)
+}
 
 
 /*: question8
@@ -100,10 +79,22 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
+func printPetName(petName: String?)
+{
+    if let petName = petName
+    {
+        print("your pets name is \(petName)")
+    }
+    else
+    {
+        print("There is no pet name!")
+    }
+    
+}
 
+printPetName(petName: "Juno")
 
-
-
+printPetName(petName: nil)
 
 
 
@@ -113,10 +104,8 @@ var thirdPetName: String? = nil
  // write your code here
 
 
-
-
-
-
+printPetName(petName: thirdPetName)
+printPetName(petName: otherPetName)
 
 
 /*: question10
@@ -124,11 +113,22 @@ var thirdPetName: String? = nil
  */
 // write your code here
 
-
-
-
-
-
+func minimum(items: [Int]) -> Int
+{
+    var smallestInt = items[0]
+    let others = items.dropFirst()
+    print("smallestInt: \(smallestInt), \(others)")
+    
+    for item in others
+    { print("item: \(item)")
+        if item < smallestInt
+        {
+            print("item: \(item) and smallest Int: \(smallestInt)")
+            smallestInt = item
+        }
+    }
+    return smallestInt
+}
 
 
 /*: question11
@@ -137,7 +137,7 @@ var thirdPetName: String? = nil
 let values1 = [4, 12, 3, 2, 9, 14, 11]
 // write your code here
 
-
+//minimum(items: values1)
 
 
 
@@ -150,19 +150,34 @@ let values1 = [4, 12, 3, 2, 9, 14, 11]
 let values2: [Int] = []
 // write your code here
 
-
-
-
-
-
-
+//minimum(items: values2)
 
 /*: question13
  ### 13. Write a new function, `maybeMinimum`. It should handle cases in which the array passed to it is empty. If the array is empty, `nil` should be returned; otherwise, the smallest `Int` in the array should be returned. What should the return type of `maybeMinimum` be? (Note: So far, you haven't seen anything other than optional `String`s. Do you expect other optional types, such as `Int`s, to be handled differently?)
  */
 // write your code here
 
-
+func maybeMinimum(items: [Int]) -> Int?
+{
+    var smallestInt = items[0]
+    let others = items.dropFirst()
+    print("smallestInt: \(smallestInt), \(others)")
+    
+    if items.isEmpty {
+        print("empty array")
+        return nil
+    }
+    
+    for item in others
+    { print("item: \(item)")
+        if item < smallestInt
+        {
+            print("nil method item: \(item) and smallest Int: \(smallestInt)")
+            smallestInt = item
+        }
+    }
+    return smallestInt
+}
 
 
 
@@ -175,11 +190,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
-
-
-
-
+maybeMinimum(items: values1?)
 
 
 /*: question15
@@ -187,7 +198,7 @@ let values2: [Int] = []
  */
 // write your code here
 
-
+maybeMinimum(items: values2)
 
 
 
